@@ -10,5 +10,12 @@
 #define Direction_hpp
 
 #include <stdio.h>
+#include "Vector.hpp"
+class Direction: public Vector{
+    private:
+    static constexpr double w = 0.0;
+    public:
+    Direction(double x, double y, double z);
+};
 
 #endif /* Direction_hpp */

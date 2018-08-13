@@ -7,3 +7,8 @@
 //
 
 #include "Point.hpp"
+
+
+Point::Point(double x, double y, double z): Vector(4, x, y, z, w){
+    
+}

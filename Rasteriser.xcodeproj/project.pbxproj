@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8A5601562119B23D00D69700 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A5601552119B23C00D69700 /* main.cpp */; };
+		8A56015E2119B31000D69700 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A56015D2119B31000D69700 /* Vector.cpp */; };
+		8A5601612119B48E00D69700 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A5601602119B48E00D69700 /* Matrix.cpp */; };
+		8A560164211AFF7200D69700 /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560162211AFF6F00D69700 /* Direction.cpp */; };
+		8A560167211AFF9500D69700 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560165211AFF9500D69700 /* Point.cpp */; };
+		8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A84D8B42120FF7300DC938F /* Camera.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +31,15 @@
 		8A5601522119B23900D69700 /* Rasteriser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rasteriser; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5601552119B23C00D69700 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8A56015C2119B27A00D69700 /* Vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
+		8A56015D2119B31000D69700 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		8A56015F2119B34700D69700 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		8A5601602119B48E00D69700 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		8A560162211AFF6F00D69700 /* Direction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Direction.cpp; sourceTree = "<group>"; };
+		8A560163211AFF7000D69700 /* Direction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Direction.hpp; sourceTree = "<group>"; };
+		8A560165211AFF9500D69700 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		8A560166211AFF9500D69700 /* Point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Point.hpp; sourceTree = "<group>"; };
+		8A84D8B42120FF7300DC938F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		8A84D8B52120FF7300DC938F /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				8A5601552119B23C00D69700 /* main.cpp */,
+				8A84D8B42120FF7300DC938F /* Camera.cpp */,
+				8A84D8B52120FF7300DC938F /* Camera.hpp */,
 				8A56015C2119B27A00D69700 /* Vector.hpp */,
+				8A56015F2119B34700D69700 /* Matrix.hpp */,
+				8A5601602119B48E00D69700 /* Matrix.cpp */,
+				8A56015D2119B31000D69700 /* Vector.cpp */,
+				8A560162211AFF6F00D69700 /* Direction.cpp */,
+				8A560163211AFF7000D69700 /* Direction.hpp */,
+				8A560165211AFF9500D69700 /* Point.cpp */,
+				8A560166211AFF9500D69700 /* Point.hpp */,
 			);
 			path = Rasteriser;
 			sourceTree = "<group>";
@@ -121,7 +144,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5601612119B48E00D69700 /* Matrix.cpp in Sources */,
+				8A56015E2119B31000D69700 /* Vector.cpp in Sources */,
+				8A560167211AFF9500D69700 /* Point.cpp in Sources */,
 				8A5601562119B23D00D69700 /* main.cpp in Sources */,
+				8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */,
+				8A560164211AFF7200D69700 /* Direction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +278,7 @@
 				8A56015B2119B23D00D69700 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

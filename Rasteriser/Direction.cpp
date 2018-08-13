@@ -7,3 +7,7 @@
 //
 
 #include "Direction.hpp"
+
+Direction::Direction(double x, double y, double z) : Vector(4, x, y, z, w){
+
+}
