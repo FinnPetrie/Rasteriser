@@ -14,13 +14,19 @@
 #include "Direction.hpp"
 class Camera{
     
-    Matrix MVP;
-    Matrix Perspective;
-    Point position;
+private:
+    
+    Matrix perspective;
+    Matrix viewVolume;
+    Matrix basisComposition;
+    Matrix translation;
+    Vector position;
     Vector bases[3];
-    Vector AB;
+    double AB;
     Vector A, B, C;
-    Camera(Direction look, Direction vUP,  );
+    
+    public:
+    Camera(Vector look, Vector vUP, Vector p,  double far, double horizontalFoV, double verticalFoV);
     
 };
 #endif /* Camera_hpp */

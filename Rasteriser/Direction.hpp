@@ -16,6 +16,7 @@ class Direction: public Vector{
     static constexpr double w = 0.0;
     public:
     Direction(double x, double y, double z);
+    Direction();
 };
 
 #endif /* Direction_hpp */

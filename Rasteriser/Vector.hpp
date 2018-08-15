@@ -19,18 +19,21 @@ class Vector: public Matrix{
     Vector(size_t n, double x, double y, double z, double w);
     Vector(double x, double y, double z);
     Vector(size_t n);
+    Vector();
     double dot(const Vector& r);
     const Vector cross(const Vector& r);
     void print() override;
     double getElement(int i, int j) override;
     double magnitude();
     
-    Vector operator*(Vector &n) ;
-    Vector operator+(Vector &n);
-    Vector operator-(Vector &n);
-    Vector operator-();
-    Vector operator*(double scalar);
-    Vector operator/(double scalar);
 };
 
+
+
+Vector operator+(const Vector &lhs, const Vector &rhs);
+Vector operator-(const Vector &lhs, const Vector &rhs);
+Vector operator-(const Vector &rhs);
+Vector operator*(double scalar, const Vector &rhs);
+Vector operator*(const Vector &rhs, double scalar);
+Vector operator/(const Vector &lhs, double scalar);
 #endif /* Vector_h */

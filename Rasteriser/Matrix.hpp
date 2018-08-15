@@ -11,25 +11,31 @@
 #include <vector>
 
 class Matrix{
-    protected:
+    public:
     size_t rows, columns;
     std::vector<double> mat;
-    public:
+    
+    
     virtual void print();
     Matrix(size_t s);
     Matrix(size_t r, size_t c);
     Matrix(size_t r, size_t c, double x, double y, double z);
     Matrix(size_t r, size_t c, double x, double y, double z, double w);
+    Matrix(const Matrix& n);
     Matrix(std::vector<double> data_);
-    size_t getRepresentation(int i, int j);
+    size_t getRepresentation(int i, int j) const;
+    size_t getRows() const;
+    size_t getColumns() const;
     virtual double getElement(int i, int j);
-    
-    Matrix operator*(const Matrix& n);
-    Matrix operator+(Matrix& n);
-    Matrix operator-(Matrix& m);
-    Matrix operator*(double S);
+    void diagonalise(std::vector<double> data);
+   
     
 };
+
+Matrix operator*(const Matrix& lhs, const Matrix &rhs);
+Matrix operator+(const Matrix& lhs, const Matrix &rhs);
+Matrix operator-(const Matrix& lhs, const Matrix& rhs);
+Matrix operator*(const Matrix& n, double S);
 
 
 #endif /* Matrix_h */

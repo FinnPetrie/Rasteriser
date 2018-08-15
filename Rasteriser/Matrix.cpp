@@ -23,10 +23,21 @@ Matrix::Matrix(size_t r, size_t c, double x, double y, double z): rows(r), colum
     mat = {x, y, z};
 }
 
+Matrix::Matrix(const Matrix &n): mat(n.mat), rows(n.rows), columns(n.columns){
+
+}
 /** an implementation of homogenous coordinates -- could do this better, look into it*/
 Matrix::Matrix(size_t r, size_t c, double x, double y, double z, double w): rows(r), columns(c), mat(rows*columns) {
     mat = {x, y, z, w};
    }
+
+void Matrix::diagonalise(std::vector<double> data){
+    assert((data.size() * data.size()) == rows*columns);
+    for(int i = 0; i < data.size(); ++i){
+        mat[getRepresentation(i,i)] = data[i];
+    }
+}
+
 
 void Matrix::print(){
     for(size_t i = 0; i < rows*columns; ++i){
@@ -37,24 +48,34 @@ void Matrix::print(){
       
     }
 }
-size_t Matrix::getRepresentation(int i, int j){
+size_t Matrix::getRepresentation(int i, int j) const{
     return i*columns + j;
 }
+
+
 double Matrix::getElement(int i, int j){
     return mat[getRepresentation(i, j)];
 }
 
-  Matrix Matrix::operator*(const Matrix& n){
-    assert(columns == n.rows);
+size_t Matrix::getColumns() const{
+    return columns;
+}
+
+size_t Matrix::getRows() const{
+    return rows;
+}
+
+  Matrix operator*(Matrix& lhs, Matrix& rhs){
+    assert(lhs.getColumns() == rhs.getRows());
      printf("Here\n");
-    Matrix A(rows, n.columns);
+    Matrix A(rhs.getRows(), lhs.getColumns());
      double sum;
-        for(int i = 0; i < A.rows; ++i){
-            for(int j = 0; j < A.columns; ++j){
+        for(int i = 0; i < A.getRows(); ++i){
+            for(int j = 0; j < A.getColumns(); ++j){
                 sum = 0.0;
                 printf("In the jth loop");
-                for(int p = 0; p < columns; p++){
-                    sum += mat[getRepresentation(i, j)] * n.mat[getRepresentation(j, i)];
+                for(int p = 0; p < lhs.getColumns(); p++){
+                    sum += lhs.mat[lhs.getRepresentation(i, j)] * rhs.mat[rhs.getRepresentation(j, i)];
                 }
             A.mat.push_back(sum);
             }
@@ -64,33 +85,33 @@ double Matrix::getElement(int i, int j){
 }
 
 
-Matrix Matrix::operator+(Matrix& n){
-    assert(columns == n.columns && rows == n.rows);
-    Matrix A(rows);
-    for(int i = 0; i < rows; ++i){
-        for(int j = 0; j < columns; ++j){
-            A.mat[getRepresentation(i, j)] = mat[getRepresentation(i, j)] + n.mat[getRepresentation(i, j)];
+Matrix operator+(const Matrix &lhs, const Matrix& rhs){
+    assert(lhs.columns == rhs.columns && lhs.rows == rhs.rows);
+    Matrix A(rhs.rows);
+    for(int i = 0; i < lhs.rows; ++i){
+        for(int j = 0; j < lhs.columns; ++j){
+            A.mat[A.getRepresentation(i, j)] = lhs.mat[lhs.getRepresentation(i, j)] + rhs.mat[rhs.getRepresentation(i, j)];
         }
     }
     return A;
 }
 /**could do better - could write a scalar multiplication function which inverts all elements of n's matrix and use the
 operator+ with the reference of n inverted. Using the A - B = A + (-B) result*/
-Matrix Matrix::operator-(Matrix &n){
-    assert(columns == n.columns && rows == n.rows);
-    Matrix A(rows);
-    for(int i = 0; i < rows; ++i){
-        for(int j = 0; j < columns; ++j){
-            A.mat[getRepresentation(i, j)] = mat[getRepresentation(i, j)] - n.mat[getRepresentation(i, j)];
+Matrix operator-(const Matrix& lhs, const Matrix &rhs){
+    assert(lhs.columns == rhs.columns && lhs.rows == rhs.rows);
+    Matrix A(lhs.rows);
+    for(int i = 0; i < lhs.rows; ++i){
+        for(int j = 0; j < rhs.columns; ++j){
+            A.mat[A.getRepresentation(i, j)] = lhs.mat[lhs.getRepresentation(i, j)] - rhs.mat[rhs.getRepresentation(i, j)];
         }
     }
     return A;
 }
 
-Matrix Matrix::operator*(double S){
-    Matrix A = *this;
-    for(int i = 0; i < rows*columns;  ++i){
-        mat[i] *= S;
+Matrix operator*(const Matrix &n, double S){
+    Matrix A(n);
+    for(int i = 0; i < n.rows*n.columns;  ++i){
+        A.mat[i] *= S;
     }
     return A;
 }

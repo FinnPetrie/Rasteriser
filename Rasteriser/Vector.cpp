@@ -21,6 +21,9 @@ Vector::Vector(size_t n, double x, double y, double z, double w) : Matrix(1, n, 
 Vector::Vector(double x, double y, double z) : Matrix(1, 3, x, y, z){
 
 }
+Vector::Vector() : Matrix(1,3, 0,0,0){
+    
+}
 
 Vector::Vector(size_t n) : Matrix(1, 3){
     
@@ -49,10 +52,10 @@ const Vector Vector::cross(const Vector& v){
     return product;
 }
 
-Vector Vector::operator-(){
-    Vector result(rows*columns);
-    for(int i = 0; i < rows*columns; ++i){
-        result.mat[i] = -mat[i];
+Vector operator-(const Vector &lhs){
+    Vector result(lhs.rows*lhs.columns);
+    for(int i = 0; i < lhs.rows*lhs.columns; ++i){
+        result.mat[i] = -lhs.mat[i];
     }
     return result;
 }
@@ -64,37 +67,40 @@ double Vector::getElement(int i, int j){
     return Matrix::getElement(i, j);
 }
 
-Vector Vector::operator/(double scalar){
-    Vector result(rows*columns);
-    for(int i =0 ; i < rows*columns; ++i){
-        result.mat[i] /= scalar;
+Vector operator/(const Vector &lhs, double scalar){
+    Vector result(lhs.rows*lhs.columns);
+    for(int i =0 ; i < lhs.rows*lhs.columns; ++i){
+        result.mat[i] = lhs.mat[i]/scalar;
     }
     return result;
 }
 
-Vector Vector::operator*(double scalar){
-    Vector result(rows*columns);
-    for(int i =0 ; i < rows*columns; ++i){
-        result.mat[i] *= scalar;
+Vector operator*(double scalar, const Vector &rhs){
+    Vector result(rhs.rows*rhs.columns);
+    for(int i =0 ; i < rhs.rows*rhs.columns; ++i){
+        result.mat[i] = rhs.mat[i]*scalar;
     }
     return result;
 }
+Vector operator*(const Vector &lhs, double scalar){
+    return scalar*lhs;
+}
 
-Vector Vector::operator+(Vector &n){
-    assert(n.mat.size() == mat.size());
-    Vector result(rows*columns);
-    for(int i = 0; i < rows*columns; ++i){
-        n.mat[i] = mat[i] + n.mat[i];
+Vector operator+(const Vector &lhs, const Vector &rhs){
+    assert(rhs.mat.size() == lhs.mat.size());
+    Vector result(rhs.rows*rhs.columns);
+    for(int i = 0; i < rhs.rows*rhs.columns; ++i){
+        result.mat[i] = lhs.mat[i] + rhs.mat[i];
         
     }
     return result;
 }
 
-Vector Vector::operator-(Vector &n){
-    assert(n.mat.size() == mat.size());
-    Vector result(rows*columns);
-    for(int i = 0; i < rows*columns; ++i){
-        n.mat[i] = mat[i] - n.mat[i];
+Vector operator-(const Vector &lhs, const Vector &rhs){
+    assert(lhs.mat.size() == rhs.mat.size());
+    Vector result(rhs.rows*rhs.columns);
+    for(int i = 0; i < rhs.rows*rhs.columns; ++i){
+        result.mat[i] = lhs.mat[i] - rhs.mat[i];
         
     }
     return result;

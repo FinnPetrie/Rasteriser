@@ -11,15 +11,15 @@
 
 #include <stdio.h>
 #include "Vector.hpp"
+#include "Direction.hpp"
 
 
-class Point: Vector{
+class Point: public Vector{
     private:
     static constexpr double w = 1.0;
     public:
     Point(double x, double y, double z);
-    
-    
-    
+    Point(const Matrix& r);
+    Point(const Vector& r);
 };
 #endif /* Point_hpp */
