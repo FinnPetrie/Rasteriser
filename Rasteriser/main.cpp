@@ -18,10 +18,13 @@ int main(int , const char * argv[]) {
     m.mat[m.getRepresentation(0, 0)] = 1;
     m.mat[m.getRepresentation(1,1)] = 1;
     m.mat[m.getRepresentation(2,1)] = 1;
+    m.print();
+
     Matrix ton(2,2);
     ton.mat[ton.getRepresentation(0,0)] = 1;
     ton.mat[ton.getRepresentation(1,1)] = 1;
      Matrix q = m * ton;
+    printf("this is q:\n");
     q.print();
     
 //    m.print();

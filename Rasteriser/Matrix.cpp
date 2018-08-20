@@ -70,20 +70,18 @@ size_t Matrix::getColumns() const{
 size_t Matrix::getRows() const{
     return rows;
 }
-
+//fix this
   Matrix operator*( const Matrix& lhs, const Matrix& rhs){
     assert(lhs.getColumns() == rhs.getRows());
      printf("Here\n");
-    Matrix A(rhs.getRows(), lhs.getColumns());
-     double sum;
-        for(int i = 0; i < A.getRows(); ++i){
-            for(int j = 0; j < A.getColumns(); ++j){
-                sum = 0.0;
+    Matrix A(lhs.getRows(), rhs.getColumns());
+//      A.print();
+        for(int i = 0; i < lhs.getRows(); ++i){
+            for(int j = 0; j < rhs.getColumns(); ++j){
                 printf("In the jth loop");
-                for(int p = 0; p < lhs.getColumns(); p++){
-                    sum += lhs.mat[lhs.getRepresentation(i, j)] * rhs.mat[rhs.getRepresentation(j, i)];
+                for(int p = 0; p < rhs.getColumns(); p++){
+                    A.mat[A.getRepresentation(i, p)] += lhs.mat[lhs.getRepresentation(i, j)] * rhs.mat[rhs.getRepresentation(j, p)];
                 }
-                A.mat[A.getRepresentation(i, j)] = sum;
             }
         }
      printf("We get out\n");
@@ -111,6 +109,7 @@ Matrix operator-(const Matrix& lhs, const Matrix &rhs){
             A.mat[A.getRepresentation(i, j)] = lhs.mat[lhs.getRepresentation(i, j)] - rhs.mat[rhs.getRepresentation(i, j)];
         }
     }
+    
     return A;
 }
 
