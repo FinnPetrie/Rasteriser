@@ -46,6 +46,7 @@ double Vector::magnitude(){
     return sqrt(mag);
     
 }
+
 const Vector Vector::cross(const Vector& v){
     assert(mat.size() == v.mat.size());
     const Vector product(v.columns, (mat[1]*v.mat[2] - mat[2]*v.mat[1]), (mat[2]*v.mat[0] - mat[0]*v.mat[2]), (mat[0]*v.mat[1] - mat[1]*v.mat[0]));

@@ -14,8 +14,16 @@
 int main(int , const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    Matrix m(3, 3);
-//    Matrix s(2,2);
+    Matrix m(3, 2);
+    m.mat[m.getRepresentation(0, 0)] = 1;
+    m.mat[m.getRepresentation(1,1)] = 1;
+    m.mat[m.getRepresentation(2,1)] = 1;
+    Matrix ton(2,2);
+    ton.mat[ton.getRepresentation(0,0)] = 1;
+    ton.mat[ton.getRepresentation(1,1)] = 1;
+     Matrix q = m * ton;
+    q.print();
+    
 //    m.print();
     Vector look(0,0, -1);
     Vector up(0,1,0);

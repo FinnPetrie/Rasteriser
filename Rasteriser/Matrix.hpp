@@ -17,6 +17,7 @@ class Matrix{
     
     
     virtual void print();
+    Matrix();
     Matrix(size_t s);
     Matrix(size_t r, size_t c);
     Matrix(size_t r, size_t c, double x, double y, double z);
@@ -32,7 +33,7 @@ class Matrix{
     
 };
 
-Matrix operator*(const Matrix& lhs, const Matrix &rhs);
+Matrix operator*( const Matrix& lhs, const Matrix &rhs);
 Matrix operator+(const Matrix& lhs, const Matrix &rhs);
 Matrix operator-(const Matrix& lhs, const Matrix& rhs);
 Matrix operator*(const Matrix& n, double S);

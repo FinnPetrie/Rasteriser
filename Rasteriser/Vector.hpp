@@ -25,7 +25,6 @@ class Vector: public Matrix{
     void print() override;
     double getElement(int i, int j) override;
     double magnitude();
-    
 };
 
 

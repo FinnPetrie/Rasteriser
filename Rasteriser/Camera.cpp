@@ -10,6 +10,7 @@
 
 Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontalFoV, double verticalFoV){
 
+
     position = p;
     Vector n = -look;
     double magnitude = look.magnitude();
@@ -34,13 +35,51 @@ Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontal
         printf("Our %dth bases: ", i);
         bases[i].print();
     }
+    
     std::vector<double> tangents;
     tangents.push_back(1/(far*tan(horizontalFoV*M_PI/180)));
     tangents.push_back(1/(far*tan(verticalFoV*M_PI/180)));
     tangents.push_back(1/far);
     tangents.push_back(1);
+    Matrix viewVolume(4,4);
     viewVolume.diagonalise(tangents);
     printf("Our view volume\n");
     viewVolume.print();
+    Matrix basisComposition(4,4);
     
+    
+    basisComposition.mat[basisComposition.getRepresentation(0,0)] = bases[0].mat[0];
+    basisComposition.mat[basisComposition.getRepresentation(0,1)] = bases[0].mat[1];
+    basisComposition.mat[basisComposition.getRepresentation(0,2)] = bases[0].mat[2];
+    basisComposition.mat[basisComposition.getRepresentation(1,0)] = bases[1].mat[0];
+    basisComposition.mat[basisComposition.getRepresentation(1,1)] = bases[1].mat[1];
+    basisComposition.mat[basisComposition.getRepresentation(1,2)] = bases[1].mat[2];
+    basisComposition.mat[basisComposition.getRepresentation(2,0)] = bases[2].mat[0];
+    basisComposition.mat[basisComposition.getRepresentation(2,1)] = bases[2].mat[1];
+    basisComposition.mat[basisComposition.getRepresentation(2,2)] = bases[2].mat[2];
+    basisComposition.mat[basisComposition.getRepresentation(3,3)] = 1;
+    
+    printf("Our bases\n");
+    basisComposition.print();
+
+    
+    
+    Matrix translation(4,4);
+    
+    std::vector<double> diagonal;
+    for(int i =0 ; i < 4; i++){
+        diagonal.push_back(1);
+    }
+    
+    translation.diagonalise(diagonal);
+    translation.mat[translation.getRepresentation(0,3)] = -position.mat[0];
+    translation.mat[translation.getRepresentation(1,3)] = -position.mat[1];
+    translation.mat[translation.getRepresentation(2,3)] = -position.mat[2];
+    printf("our translation matrix\n");
+    translation.print();
+    
+    Matrix perspective = basisComposition*translation;
+    perspective = viewVolume*perspective;
+    printf("our perspective matrix\n");
+    perspective.print();
 }
