@@ -28,6 +28,7 @@ class Matrix{
     size_t getRows() const;
     size_t getColumns() const;
     virtual double getElement(int i, int j);
+    virtual double getElement(int i) const;
     void diagonalise(std::vector<double> data);
    
     

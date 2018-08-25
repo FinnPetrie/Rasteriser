@@ -63,6 +63,10 @@ double Matrix::getElement(int i, int j){
     return mat[getRepresentation(i, j)];
 }
 
+ double Matrix::getElement(int i) const{
+    return mat[i];
+}
+
 size_t Matrix::getColumns() const{
     return columns;
 }

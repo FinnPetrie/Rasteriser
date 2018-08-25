@@ -7,3 +7,6 @@
 //
 
 #include "Ray.hpp"
+
+Ray::Ray(Point p, Direction d) : direction(d), point(p){
+}

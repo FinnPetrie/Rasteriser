@@ -9,10 +9,11 @@
 #include "Triangle.hpp"
 
 
-Triangle::Triangle(Vector v[3]){
+Triangle::Triangle(Vector v[3], Colour c){
     for(int i = 0; i < 3; i++){
         vertices[i] = v[i];
     }
+    Colour colour = c;
     
 }
 Triangle::Triangle(Vector a1, Vector a2, Vector a3){

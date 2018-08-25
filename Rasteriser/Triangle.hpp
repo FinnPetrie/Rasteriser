@@ -11,13 +11,15 @@
 
 #include <stdio.h>
 #include "Vector.hpp"
+#include "Colour.hpp"
 #endif /* Triangle_hpp */
 
 class Triangle{
     private:
     Vector vertices[3];
+    Colour colour;
     public:
-    Triangle(Vector v[3]);
+    Triangle(Vector v[3], Colour c);
     Triangle(Vector a1, Vector a2, Vector a3);
     double area();
     Vector barycentric(const Vector& p);

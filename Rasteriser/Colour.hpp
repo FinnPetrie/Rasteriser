@@ -10,5 +10,13 @@
 #define Colour_hpp
 
 #include <stdio.h>
+#include "Vector.hpp"
 
 #endif /* Colour_hpp */
+
+class Colour : public Vector{
+public:
+    Colour(double r, double g, double b);
+    Colour(double r, double g, double b, double alpha);
+    Colour();
+};
