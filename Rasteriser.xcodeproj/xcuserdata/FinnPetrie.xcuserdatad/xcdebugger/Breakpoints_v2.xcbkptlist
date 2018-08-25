@@ -244,28 +244,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Camera.cpp"
-            timestampString = "556862664.78283"
+            timestampString = "556866452.977967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p, double far, double horizontalFoV, double verticalFoV)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rasteriser/Camera.cpp"
-            timestampString = "556862664.78283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p, double far, double horizontalFoV, double verticalFoV)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/main.cpp"
-            timestampString = "556455941.76095"
+            timestampString = "556866452.977967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "main(int , const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>
@@ -291,45 +275,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Rasteriser/main.cpp"
-            timestampString = "556455941.76095"
+            filePath = "Rasteriser/Camera.cpp"
+            timestampString = "556866452.977967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/Camera.cpp"
+            timestampString = "556866452.977967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "main(int , const char * argv[])"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rasteriser/Camera.cpp"
-            timestampString = "556862664.78283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p, double far, double horizontalFoV, double verticalFoV)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rasteriser/Camera.cpp"
-            timestampString = "556862664.78283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p, double far, double horizontalFoV, double verticalFoV)"
+            landmarkName = "Camera::Camera(Vector look, Vector vUP, Vector p)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -356,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/main.cpp"
-            timestampString = "556455941.76095"
+            timestampString = "556866452.977967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52">
+            startingLineNumber = "68"
+            endingLineNumber = "68">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -434,7 +402,7 @@
                   moduleName = "Rasteriser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/FinnPetrie/Documents/3D-Projects/Rasteriser/Rasteriser/Triangle.cpp"
-                  timestampString = "556863917.3619291"
+                  timestampString = "556866456.936126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -449,7 +417,7 @@
                   moduleName = "Rasteriser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/FinnPetrie/Documents/3D-Projects/Rasteriser/Rasteriser/Triangle.cpp"
-                  timestampString = "556863917.365314"
+                  timestampString = "556866456.941874"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -528,13 +496,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "556863479.413474"
+            timestampString = "556866452.977967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "Renderer::rayTrace(Image &amp;image, const Scene &amp;scene, const Camera &amp;camera, int x0, int x1, int y0, int y1)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/main.cpp"
+            timestampString = "556866452.977967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "main(int , const char * argv[])"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

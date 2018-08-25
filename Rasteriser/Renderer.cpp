@@ -8,6 +8,9 @@
 
 #include "Renderer.hpp"
 
+Renderer::Renderer(){
+    
+}
 
 void Renderer::rayTrace(Image &image, const Scene &scene, const Camera &camera, int x0, int x1, int y0, int y1){
     for(int y = y0; y < y1; ++y){
@@ -27,6 +30,7 @@ void Renderer::rayTrace(Image &image, const Scene &scene, const Camera &camera, 
             }
         }
     }
+    printf("Complete");
 }
 
 Ray Renderer::computeEyeRay(float x, float y, int width, int height, const Camera& camera) {

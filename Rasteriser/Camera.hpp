@@ -27,10 +27,10 @@ private:
     Vector bases[3];
     double AB;
     Vector A, B, C;
-    double FoVx, FoVy, zFar;
+    double FoVx, FoVy, zFar, zNear;
     
     public:
-    Camera(Vector look, Vector vUP, Vector p,  double far, double horizontalFoV, double verticalFoV);
+    Camera(Vector look, Vector vUP, Vector p);
     void BasisComposition();
     void Perspective();
     void Translation();
