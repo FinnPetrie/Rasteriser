@@ -17,6 +17,7 @@ class Direction: public Vector{
     public:
     Direction(double x, double y, double z);
     Direction();
+    Direction(Vector v);
 };
 
 #endif /* Direction_hpp */

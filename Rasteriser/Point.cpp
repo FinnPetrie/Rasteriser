@@ -12,3 +12,8 @@
 Point::Point(double x, double y, double z): Vector(4, x, y, z, w){
     
 }
+
+
+Point::Point(const Vector& r) : Vector(r, w){
+    
+}

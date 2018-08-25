@@ -15,3 +15,7 @@ Direction::Direction(double x, double y, double z) : Vector(4, x, y, z, w){
 Direction::Direction() : Vector(4, 0, 0, 0, w){
 
 }
+
+Direction::Direction(Vector v): Vector(v, w){
+    
+}

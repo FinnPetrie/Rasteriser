@@ -12,13 +12,18 @@
 #include <stdio.h>
 #include "Point.hpp"
 #include "Direction.hpp"
-#endif /* Ray_hpp */
+#include "Triangle.hpp"
+#include "Camera.hpp"
 
 
 class Ray {
+private:
     Point point;
     Direction direction;
+public:
     Ray(Point p, Direction d);
-    
+    int rayTriangleIntersection(Triangle t) const;
     
 };
+
+#endif /* Ray_hpp */

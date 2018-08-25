@@ -10,9 +10,11 @@
 
 Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontalFoV, double verticalFoV){
 
-
+    zFar = far;
     position = p;
     Vector n = -look;
+    FoVx = horizontalFoV;
+    FoVy = verticalFoV;
     double magnitude = look.magnitude();
     bases[0] = n/magnitude;
     Vector vPrime = vUP - (vUP.dot(bases[0]))*bases[0];
@@ -45,8 +47,26 @@ Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontal
     viewVolume.diagonalise(tangents);
     printf("Our view volume\n");
     viewVolume.print();
-    Matrix basisComposition(4,4);
+  
+    this->BasisComposition();
+    this->Translation();
     
+    
+    
+    
+}
+
+
+void Camera::Perspective(){
+    Matrix perspective = basisComposition*translation;
+    perspective = viewVolume*perspective;
+    printf("our perspective matrix\n");
+    perspective.print();
+
+    
+}
+void Camera::BasisComposition(){
+    Matrix basisComposition(4,4);
     
     basisComposition.mat[basisComposition.getRepresentation(0,0)] = bases[0].mat[0];
     basisComposition.mat[basisComposition.getRepresentation(0,1)] = bases[0].mat[1];
@@ -59,11 +79,9 @@ Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontal
     basisComposition.mat[basisComposition.getRepresentation(2,2)] = bases[2].mat[2];
     basisComposition.mat[basisComposition.getRepresentation(3,3)] = 1;
     
-    printf("Our bases\n");
-    basisComposition.print();
+}
 
-    
-    
+void Camera::Translation(){
     Matrix translation(4,4);
     
     std::vector<double> diagonal;
@@ -78,8 +96,16 @@ Camera::Camera(Vector look, Vector vUP, Vector p,  double far, double horizontal
     printf("our translation matrix\n");
     translation.print();
     
-    Matrix perspective = basisComposition*translation;
-    perspective = viewVolume*perspective;
-    printf("our perspective matrix\n");
-    perspective.print();
+}
+
+double Camera::getFoVx() const{
+    return FoVx;
+}
+
+double Camera::getFoVy() const{
+    return FoVy;
+}
+
+double Camera::getZFar() const{
+    return zFar;
 }

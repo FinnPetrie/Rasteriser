@@ -33,8 +33,8 @@ void Image::save(const std::string& filename, float displayConstant) const{
         fprintf(file, "\n# y = %d\n", y);
         for(int x = 0; x < m_width; ++x){
             const Colour c(get(x,y));
-            fprintf(file, "%d %d %d\n", PPMGammaEncode(c.getElement(0), displayConstant),
-                    PPMGammaEncode(c.getElement(1), displayConstant), PPMGammaEncode(c.getElement(2),
+            fprintf(file, "%d %d %d\n", PPMGammaEncode(c.mat[0], displayConstant),
+                    PPMGammaEncode(c.mat[1], displayConstant), PPMGammaEncode(c.mat[2],
                         displayConstant));
         }
     }

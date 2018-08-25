@@ -39,3 +39,12 @@ Vector Triangle::barycentric(const Vector& p){
     return Vector(u, v, w);
     
 }
+
+Vector Triangle::getVertices(int i){
+    assert(i <= 2);
+    return vertices[i];
+}
+
+Colour Triangle::getColour() const{
+    return colour;
+}

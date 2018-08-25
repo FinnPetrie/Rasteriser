@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "Vector.hpp"
 #include "Colour.hpp"
-#endif /* Triangle_hpp */
+#include <assert.h>
 
 class Triangle{
     private:
@@ -23,4 +23,8 @@ class Triangle{
     Triangle(Vector a1, Vector a2, Vector a3);
     double area();
     Vector barycentric(const Vector& p);
+    Vector getVertices(int i);
+    Colour getColour() const;
 };
+
+#endif /* Triangle_hpp */

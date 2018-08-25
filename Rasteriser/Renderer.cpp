@@ -7,3 +7,36 @@
 //
 
 #include "Renderer.hpp"
+
+
+void Renderer::rayTrace(Image &image, const Scene &scene, const Camera &camera, int x0, int x1, int y0, int y1){
+    for(int y = y0; y < y1; ++y){
+        for(int x = y0; x < x1; ++x){
+            
+            const Ray& R = computeEyeRay(x + 0.5f, y + 0.5f, image.width(), image.height(), camera);
+            
+            float distance = INFINITY;
+            Colour L_o;
+            
+            for(unsigned int t= 0 ; t < scene.getTriangles().size(); ++t){
+                const Triangle& T = scene.getTriangles()[t];
+                
+                if(R.rayTriangleIntersection(T)){
+                    image.set(x, y, T.getColour());
+                }
+            }
+        }
+    }
+}
+
+Ray Renderer::computeEyeRay(float x, float y, int width, int height, const Camera& camera) {
+    
+    const float aspect = float(height)/width;
+    
+    float s = -2.0f * tan(camera.getFoVx() * 0.5f);
+    
+    const Vector& start = Vector((x/width - 0.5f)* s, -(y/height - 0.5f) * s * aspect, 1.0f) * camera.getZFar();
+    
+    return Ray(Point(start), Direction(start));
+    
+}

@@ -20,6 +20,7 @@ class Vector: public Matrix{
     Vector(double x, double y, double z);
     Vector(size_t n);
     Vector();
+    Vector(Vector v, double w);
     double dot(const Vector& r);
     const Vector cross(const Vector& r);
     void print() override;
@@ -35,4 +36,5 @@ Vector operator-(const Vector &rhs);
 Vector operator*(double scalar, const Vector &rhs);
 Vector operator*(const Vector &rhs, double scalar);
 Vector operator/(const Vector &lhs, double scalar);
+Vector operator/=(const Vector &lhs, double);
 #endif /* Vector_h */

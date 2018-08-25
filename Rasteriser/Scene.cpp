@@ -7,3 +7,16 @@
 //
 
 #include "Scene.hpp"
+
+
+Scene::Scene(std::vector<Triangle> t, std::vector<Light> l) : triangles(t), lights(l){
+    
+}
+
+std::vector<Triangle>Scene::getTriangles() const{
+    return triangles;
+}
+
+std::vector<Light>Scene::getLights() const{
+    return lights;
+}

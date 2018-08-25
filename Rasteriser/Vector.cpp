@@ -28,6 +28,9 @@ Vector::Vector() : Matrix(1,3, 0,0,0){
 Vector::Vector(size_t n) : Matrix(1, 3){
     
 }
+
+Vector::Vector(Vector v, double w) : Matrix(v.rows, v.columns + 1, v.mat[0], v.mat[1], v.mat[2], w){
+}
 //functional
 double Vector::dot(const Vector& v){
     assert(mat.size() == v.mat.size());
@@ -76,6 +79,10 @@ Vector operator/(const Vector &lhs, double scalar){
     return result;
 }
 
+Vector operator/=(const Vector &lhs, double scalar){
+    return lhs/scalar;
+}
+
 Vector operator*(double scalar, const Vector &rhs){
     Vector result(rhs.rows*rhs.columns);
     for(int i =0 ; i < rhs.rows*rhs.columns; ++i){
@@ -106,6 +113,7 @@ Vector operator-(const Vector &lhs, const Vector &rhs){
     }
     return result;
 }
+
 
 
 //Vector Vector::operator*(Vector &n){

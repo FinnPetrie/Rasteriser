@@ -5,14 +5,12 @@
 //  Created by Finn Petrie on 23/08/18.
 //  Copyright © 2018 Finn Petrie. All rights reserved.
 //
-
 #ifndef Colour_hpp
 #define Colour_hpp
 
 #include <stdio.h>
 #include "Vector.hpp"
 
-#endif /* Colour_hpp */
 
 class Colour : public Vector{
 public:
@@ -20,3 +18,5 @@ public:
     Colour(double r, double g, double b, double alpha);
     Colour();
 };
+
+#endif /* Colour_hpp */

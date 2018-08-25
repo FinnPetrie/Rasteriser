@@ -10,5 +10,18 @@
 #define Light_hpp
 
 #include <stdio.h>
+#include "Point.hpp"
+#include "Colour.hpp"
 
 #endif /* Light_hpp */
+
+class Light{
+private:
+    Point location;
+    Colour emittance;
+    
+public:
+    
+    Light();
+    Light(Point l, Colour c);
+};

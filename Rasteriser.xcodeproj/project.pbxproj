@@ -11,6 +11,9 @@
 		8A1327F9212E629D0060AC05 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1327F7212E629D0060AC05 /* Ray.cpp */; };
 		8A1327FC212E62B40060AC05 /* Colour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1327FA212E62B40060AC05 /* Colour.cpp */; };
 		8A1327FF212E68890060AC05 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1327FD212E68890060AC05 /* Image.cpp */; };
+		8A1328022130F9880060AC05 /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1328002130F9880060AC05 /* Renderer.cpp */; };
+		8A1328052130FB0D0060AC05 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1328032130FB0D0060AC05 /* Light.cpp */; };
+		8A1328082130FBD70060AC05 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A1328062130FBD70060AC05 /* Scene.cpp */; };
 		8A5601562119B23D00D69700 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A5601552119B23C00D69700 /* main.cpp */; };
 		8A56015E2119B31000D69700 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A56015D2119B31000D69700 /* Vector.cpp */; };
 		8A5601612119B48E00D69700 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A5601602119B48E00D69700 /* Matrix.cpp */; };
@@ -40,6 +43,12 @@
 		8A1327FB212E62B40060AC05 /* Colour.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Colour.hpp; sourceTree = "<group>"; };
 		8A1327FD212E68890060AC05 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
 		8A1327FE212E68890060AC05 /* Image.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Image.hpp; sourceTree = "<group>"; };
+		8A1328002130F9880060AC05 /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
+		8A1328012130F9880060AC05 /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
+		8A1328032130FB0D0060AC05 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		8A1328042130FB0D0060AC05 /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
+		8A1328062130FBD70060AC05 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		8A1328072130FBD70060AC05 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
 		8A5601522119B23900D69700 /* Rasteriser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rasteriser; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5601552119B23C00D69700 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8A56015C2119B27A00D69700 /* Vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
@@ -85,7 +94,13 @@
 			isa = PBXGroup;
 			children = (
 				8A5601552119B23C00D69700 /* main.cpp */,
+				8A1328002130F9880060AC05 /* Renderer.cpp */,
+				8A1328012130F9880060AC05 /* Renderer.hpp */,
+				8A1328062130FBD70060AC05 /* Scene.cpp */,
+				8A1328072130FBD70060AC05 /* Scene.hpp */,
 				8A84D8B42120FF7300DC938F /* Camera.cpp */,
+				8A1328032130FB0D0060AC05 /* Light.cpp */,
+				8A1328042130FB0D0060AC05 /* Light.hpp */,
 				8A1327F4212D708C0060AC05 /* Triangle.cpp */,
 				8A1327F5212D708C0060AC05 /* Triangle.hpp */,
 				8A84D8B52120FF7300DC938F /* Camera.hpp */,
@@ -165,10 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5601612119B48E00D69700 /* Matrix.cpp in Sources */,
+				8A1328082130FBD70060AC05 /* Scene.cpp in Sources */,
 				8A1327FC212E62B40060AC05 /* Colour.cpp in Sources */,
 				8A56015E2119B31000D69700 /* Vector.cpp in Sources */,
 				8A560167211AFF9500D69700 /* Point.cpp in Sources */,
+				8A1328022130F9880060AC05 /* Renderer.cpp in Sources */,
 				8A1327F6212D708C0060AC05 /* Triangle.cpp in Sources */,
+				8A1328052130FB0D0060AC05 /* Light.cpp in Sources */,
 				8A1327F9212E629D0060AC05 /* Ray.cpp in Sources */,
 				8A5601562119B23D00D69700 /* main.cpp in Sources */,
 				8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */,

@@ -20,6 +20,7 @@ Matrix::Matrix(size_t r, size_t c) : rows(r), columns(c), mat(rows*columns, {}){
 }
 
 
+
 //incorrect, quick hack - this sorta presumes the functionality of a vector in the matrix class-
 //high coupling. Sort this out.
 Matrix::Matrix(size_t r, size_t c, double x, double y, double z): rows(r), columns(c), mat(rows*columns) {

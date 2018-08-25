@@ -17,7 +17,6 @@
 #include <cmath>
 
 
-#endif /* Image_hpp */
 
 class Image{
     
@@ -36,3 +35,5 @@ public:
     const Colour& get(int x, int y) const;
     void save(const std::string& filename, float displatConstat = 15.0f) const;
 };
+
+#endif /* Image_hpp */

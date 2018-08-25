@@ -27,9 +27,19 @@ private:
     Vector bases[3];
     double AB;
     Vector A, B, C;
+    double FoVx, FoVy, zFar;
     
     public:
     Camera(Vector look, Vector vUP, Vector p,  double far, double horizontalFoV, double verticalFoV);
+    void BasisComposition();
+    void Perspective();
+    void Translation();
+    void ViewVolume();
+    double getFoVx() const;
+    double getFoVy() const;
+    double getZFar() const;
+    
+    
     
 };
 #endif /* Camera_hpp */
