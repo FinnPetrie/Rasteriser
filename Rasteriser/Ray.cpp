@@ -15,22 +15,27 @@ Ray::Ray(Point p, Direction d) : direction(d), point(p){
 }
 
 int Ray::rayTriangleIntersection(Triangle t) const{
-    Vector n = (t.getVertices(1) - t.getVertices(0)).cross(t.getVertices(2) - t.getVertices(0));
+    Vector edgeBA = t.getVertices(1) - t.getVertices(0);
+    Vector edgeCA = t.getVertices(2) - t.getVertices(0);
+    Vector n = edgeBA.cross(edgeCA);
     Vector AB = n.cross(t.getVertices(1) - t.getVertices(0));
     double dividend = (t.getVertices(2) - t.getVertices(0)).dot(AB);
     AB = AB/dividend;
     Vector AC = n.cross(t.getVertices(0) - t.getVertices(2));
+//    printf("\n\n\n, our AC");
+    AC.print();
     dividend = (t.getVertices(1) - t.getVertices(0)).dot(AC);
+//    printf("\n\nPast AC Dividend\n\n");
     AC = AC/dividend;
     
     
-    
-    double u = n.dot(this->direction);
+    Vector d(this->direction.Matrix::getElement(0), this->direction.Matrix::getElement(1), this->direction.Matrix::getElement(2));
+    double u = n.dot(d);
     if(std::abs(u) < 0.00001){
         return UNSTABLE;
     }
-    
-    double term = (t.getVertices(0) - this->point).dot(n);
+    Vector p(this->point.Matrix::getElement(0), this->point.Matrix::getElement(1), this->point.Matrix::getElement(2));
+    double term = (t.getVertices(0) - p).dot(n);
     term /= u;
     
     if( term < 0){
@@ -40,7 +45,7 @@ int Ray::rayTriangleIntersection(Triangle t) const{
     
     Point Q = this->point + term*this->direction;
     
-    Vector bary = t.barycentric(Q);
+    Point bary = t.barycentric(Q);
     if((1 > bary.Matrix::getElement(0) || bary.Matrix::getElement(0) < 0 ) || (1 > bary.Matrix::getElement(1) || bary.Matrix::getElement(1) < 0) || (1 > bary.Matrix::getElement(2) || bary.Matrix::getElement(2) < 0)){
         return RAY_MISSES_PLANE;
     } else{

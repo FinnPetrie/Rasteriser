@@ -29,10 +29,12 @@ const Colour& Image::get(int x, int y) const{
 void Image::save(const std::string& filename, float displayConstant) const{
     FILE* file = fopen(filename.c_str(), "wt");
     fprintf(file, "P3 %d %d 255\n", m_width, m_height);
+    printf("Saving image\n");
     for(int y = 0; y < m_height; ++y){
         fprintf(file, "\n# y = %d\n", y);
         for(int x = 0; x < m_width; ++x){
             const Colour c(get(x,y));
+            printf("in our inner loop\n");
             fprintf(file, "%d %d %d\n", PPMGammaEncode(c.mat[0], displayConstant),
                     PPMGammaEncode(c.mat[1], displayConstant), PPMGammaEncode(c.mat[2],
                         displayConstant));

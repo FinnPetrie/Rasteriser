@@ -25,6 +25,7 @@ class Triangle{
     Vector barycentric(const Vector& p);
     Vector getVertices(int i);
     Colour getColour() const;
+    void printVertices() const;
 };
 
 #endif /* Triangle_hpp */

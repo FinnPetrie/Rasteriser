@@ -23,7 +23,7 @@ class Vector: public Matrix{
     Vector(Vector v, double w);
     double dot(const Vector& r);
     const Vector cross(const Vector& r);
-    void print() override;
+    void print() const override;
     double getElement(int i, int j) override;
     double magnitude();
 };

@@ -13,7 +13,7 @@
 #include "Vector.hpp"
 class Direction: public Vector{
     private:
-    static constexpr double w = 0.0;
+    double w = 0.0;
     public:
     Direction(double x, double y, double z);
     Direction();

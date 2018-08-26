@@ -13,7 +13,7 @@ Matrix::Matrix(){
     Matrix::Matrix(4);
 }
 Matrix::Matrix(size_t square): rows(square), columns(square), mat(rows*columns, {}){
-    printf("squre initialiser");
+//    printf("squre initialiser");
 }
 
 Matrix::Matrix(size_t r, size_t c) : rows(r), columns(c), mat(rows*columns, {}){
@@ -37,16 +37,16 @@ Matrix::Matrix(size_t r, size_t c, double x, double y, double z, double w): rows
 
 void Matrix::diagonalise(std::vector<double> data){
     assert((data.size() * data.size()) == rows*columns);
-    printf("Data sizze: %f", data.size());
-    printf("data columns, data rows, %f %f\n", rows, columns);
+//    printf("Data sizze: %f", data.size());
+//    printf("data columns, data rows, %f %f\n", rows, columns);
     for(int i = 0; i < data.size(); ++i){
-        printf("Representation: %d", getRepresentation(i, i));
+//        printf("Representation: %d", getRepresentation(i, i));
         mat[getRepresentation(i,i)] = data[i];
     }
 }
 
 
-void Matrix::print(){
+void Matrix::print() const{
     for(size_t i = 0; i < rows*columns; ++i){
         if(i%columns == 0){
             printf("\n");
@@ -78,18 +78,18 @@ size_t Matrix::getRows() const{
 //fix this
   Matrix operator*( const Matrix& lhs, const Matrix& rhs){
     assert(lhs.getColumns() == rhs.getRows());
-     printf("Here\n");
+//     printf("Here\n");
     Matrix A(lhs.getRows(), rhs.getColumns());
 //      A.print();
         for(int i = 0; i < lhs.getRows(); ++i){
             for(int j = 0; j < rhs.getColumns(); ++j){
-                printf("In the jth loop");
+//                printf("In the jth loop");
                 for(int p = 0; p < rhs.getColumns(); p++){
                     A.mat[A.getRepresentation(i, p)] += lhs.mat[lhs.getRepresentation(i, j)] * rhs.mat[rhs.getRepresentation(j, p)];
                 }
             }
         }
-     printf("We get out\n");
+//     printf("We get out\n");
      return A;
 }
 

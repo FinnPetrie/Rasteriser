@@ -20,3 +20,10 @@ std::vector<Triangle>Scene::getTriangles() const{
 std::vector<Light>Scene::getLights() const{
     return lights;
 }
+
+
+void Scene::printTriangles() const{
+    for(int i = 0; i < triangles.size(); ++i){
+        triangles[i].printVertices();
+    }
+}

@@ -63,7 +63,7 @@ Vector operator-(const Vector &lhs){
     }
     return result;
 }
-void Vector::print(){
+void Vector::print() const{
     Matrix::print();
 }
 
@@ -106,8 +106,9 @@ Vector operator+(const Vector &lhs, const Vector &rhs){
 
 Vector operator-(const Vector &lhs, const Vector &rhs){
     assert(lhs.mat.size() == rhs.mat.size());
-    Vector result(rhs.rows*rhs.columns);
-    for(int i = 0; i < rhs.rows*rhs.columns; ++i){
+//    printf("lhs %zu  rhs %zu.", lhs.rows, rhs.rows);
+    Vector result(rhs.columns);
+    for(int i = 0; i < rhs.columns; ++i){
         result.mat[i] = lhs.mat[i] - rhs.mat[i];
         
     }

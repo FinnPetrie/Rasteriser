@@ -10,22 +10,34 @@
 
 
 Triangle::Triangle(Vector v[3], Colour c){
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 3; ++i){
         vertices[i] = v[i];
     }
     Colour colour = c;
+    for(int i = 0; i < 3; ++i){
+        vertices[i].print();
+    }
     
 }
 Triangle::Triangle(Vector a1, Vector a2, Vector a3){
     vertices[0] = a1;
     vertices[1] = a2;
     vertices[2] = a3;
+    for(int i = 0; i < 3; ++i){
+        vertices[i].print();
+    }
 }
 
 double Triangle::area(){
     Vector parrallelogram = (vertices[1] - vertices[0]).cross(vertices[2] - vertices[0]);
     double parArea = parrallelogram.magnitude();
     return parArea/2;
+}
+
+void Triangle::printVertices() const{
+    for(int i =0 ; i < 3; ++i){
+        vertices[i].print();
+    }
 }
 
 Vector Triangle::barycentric(const Vector& p){

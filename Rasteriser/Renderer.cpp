@@ -12,7 +12,7 @@ Renderer::Renderer(){
     
 }
 
-void Renderer::rayTrace(Image &image, const Scene &scene, const Camera &camera, int x0, int x1, int y0, int y1){
+void Renderer::rayTrace(Image &image,  const Scene &scene, const Camera &camera, int x0, int x1, int y0, int y1){
     for(int y = y0; y < y1; ++y){
         for(int x = y0; x < x1; ++x){
             
@@ -20,10 +20,15 @@ void Renderer::rayTrace(Image &image, const Scene &scene, const Camera &camera, 
             
             float distance = INFINITY;
             Colour L_o;
-            
-            for(unsigned int t= 0 ; t < scene.getTriangles().size(); ++t){
-                const Triangle& T = scene.getTriangles()[t];
-                
+//            printf("\n\n\nthese are our triangles\n");
+//            scene.printTriangles();
+//            printf("\n\n\n");
+            for(unsigned int t= 0 ; t < scene.triangles.size(); ++t){
+//                printf("T %ud\n", t);
+                const Triangle& T = scene.triangles[t];
+//                printf("\n\n");
+////                T.printVertices();
+//                printf("\n\n\n");
                 if(R.rayTriangleIntersection(T)){
                     image.set(x, y, T.getColour());
                 }

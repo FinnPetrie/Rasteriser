@@ -16,7 +16,7 @@ class Matrix{
     std::vector<double> mat;
     
     
-    virtual void print();
+    virtual void print() const;
     Matrix();
     Matrix(size_t s);
     Matrix(size_t r, size_t c);

@@ -18,13 +18,15 @@
 
 
 class Scene{
-private: std::vector<Triangle> triangles;
-    std::vector<Light> lights;
 public:
+
+    std::vector<Triangle> triangles;
+    std::vector<Light> lights;
     
     Scene();
     Scene(std::vector<Triangle> t, std::vector<Light> l);
     std::vector<Triangle> getTriangles() const;
     std::vector<Light> getLights() const;
+    void printTriangles() const;
 };
 #endif /* Scene_hpp */
