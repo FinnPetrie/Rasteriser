@@ -42,7 +42,7 @@ double Triangle::area(){
 }
 
 void Triangle::printVertices() const{
-    for(int i =0 ; i < 3; ++i){
+    for(int i =0 ; i <= 3; ++i){
         vertices[i].print();
     }
 }

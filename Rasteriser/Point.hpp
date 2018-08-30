@@ -16,7 +16,6 @@
 
 class Point: public Vector{
     private:
-    double w = 1.0;
     public:
     Point(double x, double y, double z);
     Point(const Matrix& r);

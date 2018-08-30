@@ -13,7 +13,6 @@
 #include "Vector.hpp"
 class Direction: public Vector{
     private:
-    double w = 0.0;
     public:
     Direction(double x, double y, double z);
     Direction();

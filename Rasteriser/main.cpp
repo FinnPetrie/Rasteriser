@@ -44,6 +44,7 @@ int main(int , const char * argv[]) {
     Vector s(-1.9, -1, -2);
     Vector g(1.6, -0.5, -2);
     Vector v[3] = {t, s, g};
+  
     
     Vector normal1(0.0f, 0.6f, 1.0f);
     normal1 = normal1.direction();
@@ -56,9 +57,14 @@ int main(int , const char * argv[]) {
     Colour c(0.5, 0, 0);
     Triangle tri(v, normals);
     tri.printVertices();
+    
+    printf("\n\n\n");
     std::vector<Triangle> triangles;
     triangles.push_back(tri);
     triangles[0].printVertices();
+    
+    printf("\n\n\n");
+
 
     std::vector<Light>lights;
     Light l;
@@ -83,6 +89,8 @@ int main(int , const char * argv[]) {
     Renderer r;
     Camera ourCamera(look, up, position);
     Image ourImage(640, 480);
+    Point p(0,2,0);
+    p.print();
     r.rayTrace(ourImage, ourScene, ourCamera, 0, ourImage.width(), 0, ourImage.height());
 //        printf("%f this is our dot product\n", q);
     ourImage.save("ourImage.ppm", 2.2f);

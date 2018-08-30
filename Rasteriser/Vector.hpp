@@ -28,6 +28,7 @@ class Vector: public Matrix{
     double getElement(int i, int j) override;
     double magnitude() const;
     Vector direction() const;
+    void normalised();
 };
 
 

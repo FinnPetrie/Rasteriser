@@ -20,13 +20,17 @@ void Renderer::rayTrace(Image &image,  const Scene &scene, const Camera &camera,
                 // Ray through the pixel
                 const Ray& R = computeEyeRay(x + 0.5f, y + 0.5f, image.width(),
                                              image.height(), camera);
-                R
+//                R.print();
                 // Distance to closest known intersection
                 float distance = INFINITY;
                 Colour L_o;
                 // For each triangle
                 for (unsigned int t = 0; t < scene.triangles.size(); ++t){
+//                    printf("t = %d", t);
+                    printf("\n");
                     const Triangle& T = scene.triangles[t];
+                    printf("\n");
+                    scene.triangles[t].printVertices();
                     if (sampleRayTriangle(scene, x, y, R, T, L_o, distance)) {
                         image.set(x, y, L_o);
                     }
@@ -41,9 +45,10 @@ Ray Renderer::computeEyeRay(float x, float y, int width, int height, const Camer
     
     float s = -2.0f * tan(camera.getFoVx() * 0.5f);
     
-    const Vector& start = Vector((x/width - 0.5f)* s, -(y/height - 0.5f) * s * aspect, 1.0f) * camera.getZFar();
     
-    return Ray(Point(start), Direction(start));
+    const Vector& start = Vector((x/width - 0.5f)* s, -(y/height - 0.5f) * s * aspect, 1.0f) * camera.getZNear();
+    const Vector& direct = start.direction();
+    return Ray(Point(start), Direction(direct));
     
 }
 
@@ -51,16 +56,23 @@ Ray Renderer::computeEyeRay(float x, float y, int width, int height, const Camer
 float Renderer::intersect(const Ray& R, const Triangle& T, float weight[3]) {
     const Vector& e1 = T.vertex(1) - T.vertex(0);
     const Vector& e2 = T.vertex(2) - T.vertex(0);
-    const Vector& q = R.directionise().cross(e2);
+    const Vector& q = R.getDirection().cross(e2);
     const float a = e1.dot(q);
     const Vector& s = R.getPoint() - T.vertex(0);
     const Vector& r = s.cross(e1);
-    
+//    printf("These are our vectors: \n");
+//    e1.print();
+//    e2.print();
+//    q.print();
+//    s.print();
+//    r.print();
+
     // Barycentric vertex weights
     
     weight[1] = s.dot(q) / a;
     weight[2] = R.directionise().dot(r) / a;
     weight[0] = 1.0f - (weight[1] + weight[2]);
+//    printf("%f\n", weight[1] + weight[2] + weight[0]);
     const float dist = e2.dot(r) / a;
     static const float epsilon = 1e-7f;
     static const float epsilon2 = 1e-10;
@@ -72,6 +84,7 @@ float Renderer::intersect(const Ray& R, const Triangle& T, float weight[3]) {
         // the ray origin: "infinite" distance until intersection.
         return INFINITY;
     } else {
+        printf("a hit!\n");
         return dist;
     }
 }
@@ -81,10 +94,11 @@ bool Renderer::sampleRayTriangle(const Scene& scene, int x, int y, const Ray& R,
     
      float weight[3];
     const float d = intersect(R, T, weight);
-    
+//    printf("getting to the distance");
+//    printf("\n\n\ndistance: %f", d);
      if (d >= distance) {
          return false;
-
+         
         }
     
      // This intersection is closer than the previous one
@@ -92,13 +106,16 @@ bool Renderer::sampleRayTriangle(const Scene& scene, int x, int y, const Ray& R,
     
      // Intersection point
      const Point& P = R.getPoint() + R.getDirection() * d;
-    
+//    printf("our intersection: ");
+    P.print();
      // Find the interpolated vertex normal at the intersection
      const Vector& n = (T.normal(0) * weight[0] +
                             T.normal(1) * weight[1] +
                         T.normal(2) * weight[2]).direction();
-    
+    printf("\nour normal: ");
+    n.print();
      const Vector& w_o = -R.directionise();
+    
     // Debugging intersect: set to white on any intersection
     radiance = Colour(1, 1, 1);
     // Debugging barycentric
