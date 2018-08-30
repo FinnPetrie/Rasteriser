@@ -44,8 +44,17 @@ int main(int , const char * argv[]) {
     Vector s(-1.9, -1, -2);
     Vector g(1.6, -0.5, -2);
     Vector v[3] = {t, s, g};
+    
+    Vector normal1(0.0f, 0.6f, 1.0f);
+    normal1 = normal1.direction();
+    Vector normal2(-0.4f, 0.4f, 1.0f);
+    normal2 = normal2.direction();
+    Vector normal3(0.4f, -0.4f, 1.0f);
+    normal3 = normal3.direction();
+    
+    Vector normals[3] = {normal1, normal2, normal3};
     Colour c(0.5, 0, 0);
-    Triangle tri(v, c);
+    Triangle tri(v, normals);
     tri.printVertices();
     std::vector<Triangle> triangles;
     triangles.push_back(tri);

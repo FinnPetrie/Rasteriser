@@ -11,7 +11,7 @@
 #define RAY_MISSES_PLANE 0
 #define INTERSECTION 1
 
-Ray::Ray(Point p, Direction d) : direction(d), point(p){
+Ray::Ray(Point p, class Direction d) : direction(d), point(p){
 }
 
 int Ray::rayTriangleIntersection(Triangle t) const{
@@ -51,5 +51,25 @@ int Ray::rayTriangleIntersection(Triangle t) const{
     } else{
         return INTERSECTION;
     }
+}
+
+
+Direction Ray::getDirection() const{
+    return direction;
+}
+
+void Ray::print() const{
+    this->point.print();
+//    this->direction.print();
+    
+}
+
+Vector Ray::directionise() const{
+    Vector result(direction.mat[0], direction.mat[1], direction.mat[2]);
+    return result = result/result.magnitude();
+}
+
+Point Ray::getPoint() const{
+    return point;
 }
 

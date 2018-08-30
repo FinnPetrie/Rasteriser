@@ -31,8 +31,11 @@ Vector::Vector(size_t n) : Matrix(1, 3){
 
 Vector::Vector(Vector v, double w) : Matrix(v.rows, v.columns + 1, v.mat[0], v.mat[1], v.mat[2], w){
 }
+Vector::Vector(const Vector &v) : Matrix(v.rows, v.columns, v.mat[0], v.mat[1], v.mat[2]){
+    
+}
 //functional
-double Vector::dot(const Vector& v){
+double Vector::dot(const Vector& v) const{
     assert(mat.size() == v.mat.size());
     double sum = 0;
     for(unsigned int t = 0; t < mat.size(); ++t){
@@ -41,7 +44,7 @@ double Vector::dot(const Vector& v){
     return sum;
 }
 /** not functional - possibly something to do with const correctness*/
-double Vector::magnitude(){
+double Vector::magnitude() const{
     double mag = 0;
     for(int i =0 ; i < rows*columns; ++i){
         mag += mat[i]*mat[i];
@@ -50,7 +53,7 @@ double Vector::magnitude(){
     
 }
 
-const Vector Vector::cross(const Vector& v){
+ Vector Vector::cross(const Vector& v)const{
     assert(mat.size() == v.mat.size());
     const Vector product(v.columns, (mat[1]*v.mat[2] - mat[2]*v.mat[1]), (mat[2]*v.mat[0] - mat[0]*v.mat[2]), (mat[0]*v.mat[1] - mat[1]*v.mat[0]));
     return product;
@@ -70,6 +73,16 @@ void Vector::print() const{
 double Vector::getElement(int i, int j){
     return Matrix::getElement(i, j);
 }
+
+Vector Vector::direction() const{
+    double magnitude = this->magnitude();
+    Vector result(*this);
+    for(int i = 0; i <= this->mat.size(); ++i){
+        result.mat[i] = result.mat[i]/magnitude;
+    }
+    return result;
+}
+
 
 Vector operator/(const Vector &lhs, double scalar){
     Vector result(lhs.rows*lhs.columns);

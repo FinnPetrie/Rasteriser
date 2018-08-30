@@ -21,11 +21,13 @@ class Vector: public Matrix{
     Vector(size_t n);
     Vector();
     Vector(Vector v, double w);
-    double dot(const Vector& r);
-    const Vector cross(const Vector& r);
+    Vector(Vector const &v);
+    double dot(const Vector& r) const;
+    Vector cross(const Vector& r)const;
     void print() const override;
     double getElement(int i, int j) override;
-    double magnitude();
+    double magnitude() const;
+    Vector direction() const;
 };
 
 

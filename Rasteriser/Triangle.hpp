@@ -17,15 +17,19 @@
 class Triangle{
     private:
     Vector vertices[3];
-    Colour colour;
+    Vector normals[3];
+    const Colour colour;
     public:
     Triangle(Vector v[3], Colour c);
     Triangle(Vector a1, Vector a2, Vector a3);
+    Triangle(Vector v[3], Vector n[3]);
     double area();
     Vector barycentric(const Vector& p);
     Vector getVertices(int i);
     Colour getColour() const;
     void printVertices() const;
+    Vector normal(int i) const;
+    Vector vertex(int i) const;
 };
 
 #endif /* Triangle_hpp */

@@ -16,6 +16,11 @@ Colour::Colour(double r, double g, double b, double alpha) : Vector(r, g, b, alp
     
 }
 
-Colour::Colour() : Colour(1,1,1){
+Colour::Colour() : Colour(0,0,0){
+    
+}
+
+
+Colour::Colour(Vector v) : Colour(v.mat[0], v.mat[1], v.mat[2]){
     
 }

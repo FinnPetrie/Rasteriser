@@ -28,6 +28,13 @@ Triangle::Triangle(Vector a1, Vector a2, Vector a3){
     }
 }
 
+
+Triangle::Triangle(Vector v[3], Vector n[3]){
+    for(int i = 0; i < 2; ++i){
+        vertices[i] = v[i];
+        normals[i] = n[i];
+    }
+}
 double Triangle::area(){
     Vector parrallelogram = (vertices[1] - vertices[0]).cross(vertices[2] - vertices[0]);
     double parArea = parrallelogram.magnitude();
@@ -59,4 +66,16 @@ Vector Triangle::getVertices(int i){
 
 Colour Triangle::getColour() const{
     return colour;
+}
+
+
+Vector Triangle::normal(int i) const{
+    assert(i <= 2);
+    return normals[i];
+    
+}
+
+Vector Triangle::vertex(int i) const{
+    assert(i <= 2);
+    return vertices[i];
 }

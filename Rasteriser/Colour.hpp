@@ -17,6 +17,7 @@ public:
     Colour(double r, double g, double b);
     Colour(double r, double g, double b, double alpha);
     Colour();
+    Colour(Vector v);
 };
 
 #endif /* Colour_hpp */

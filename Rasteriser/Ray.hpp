@@ -23,7 +23,10 @@ private:
 public:
     Ray(Point p, Direction d);
     int rayTriangleIntersection(Triangle t) const;
-    
+    Direction getDirection() const;
+    void print() const;
+    Vector directionise() const;
+    Point getPoint() const;
 };
 
 #endif /* Ray_hpp */
