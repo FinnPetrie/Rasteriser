@@ -13,16 +13,20 @@
 #include "Vector.hpp"
 #include "Colour.hpp"
 #include <assert.h>
+#include "BSDF.hpp"
 
 class Triangle{
-    private:
+public:
     Vector vertices[3];
     Vector normals[3];
     const Colour colour;
+    BSDF bsdf;
     public:
     Triangle(Vector v[3], Colour c);
+    Triangle(Vector v[3], Colour c, BSDF b);
+
     Triangle(Vector a1, Vector a2, Vector a3);
-    Triangle(Vector v[3], Vector n[3]);
+    Triangle(Vector v[3], Vector n[3], BSDF b);
     double area();
     Vector barycentric(const Vector& p);
     Vector getVertices(int i);
@@ -30,6 +34,8 @@ class Triangle{
     void printVertices() const;
     Vector normal(int i) const;
     Vector vertex(int i) const;
+    const BSDF& getBSDF() const;
+    void setBSDF(const Vector& n) const;
 };
 
 #endif /* Triangle_hpp */

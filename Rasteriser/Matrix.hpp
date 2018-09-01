@@ -38,6 +38,7 @@ Matrix operator*( const Matrix& lhs, const Matrix &rhs);
 Matrix operator+(const Matrix& lhs, const Matrix &rhs);
 Matrix operator-(const Matrix& lhs, const Matrix& rhs);
 Matrix operator*(const Matrix& n, double S);
+Matrix operator+=(const Matrix& lhs, const Matrix &rhs);
 
 
 #endif /* Matrix_h */

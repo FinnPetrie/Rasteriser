@@ -9,11 +9,18 @@
 #include "Point.hpp"
 
 
-Point::Point(double x, double y, double z): Vector(4, x, y, z, w){
+Point::Point(double x, double y, double z): Vector(4, x, y, z, 1){
+}
+Point::Point(): Vector(4, 0,0,0,1){
     
 }
 
 
-Point::Point(const Vector& r) : Vector(r, w){
+Point::Point(const Vector& r) : Vector(r, 1){
     
+}
+
+
+double Point::operator()(int index){
+    return Vector::operator()(index);
 }

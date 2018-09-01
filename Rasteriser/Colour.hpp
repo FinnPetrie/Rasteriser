@@ -10,14 +10,20 @@
 
 #include <stdio.h>
 #include "Vector.hpp"
+#include <assert.h>
 
 
-class Colour : public Vector{
+class Colour{
+private:
+    double red, green, blue, alpha;
 public:
     Colour(double r, double g, double b);
     Colour(double r, double g, double b, double alpha);
     Colour();
     Colour(Vector v);
+
 };
+Colour operator*(Colour &lhs, Colour &rhs)
+
 
 #endif /* Colour_hpp */

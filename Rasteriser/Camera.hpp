@@ -29,15 +29,17 @@ private:
     Vector A, B, C;
     double FoVx, FoVy, zFar, zNear;
     
-    public:
+public:
     Camera(Vector look, Vector vUP, Vector p);
-    void BasisComposition();
-    void Perspective();
-    void Translation();
-    void ViewVolume();
+    Matrix BasisComposition();
+    Matrix Perspective();
+    Matrix Translation();
+    Matrix ViewVolume();
     double getFoVx() const;
     double getFoVy() const;
     double getZFar() const;
+    double getZNear() const;
+    void print() const;
     
     
     

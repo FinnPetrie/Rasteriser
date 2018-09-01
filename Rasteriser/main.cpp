@@ -45,25 +45,41 @@ int main(int , const char * argv[]) {
     Vector g(1.6, -0.5, -2);
     Vector v[3] = {t, s, g};
     
-    Vector normal1(0.0f, 0.6f, 1.0f);
+    Vector normal1(0.0, 0.6, 1.0);
     normal1 = normal1.direction();
-    Vector normal2(-0.4f, 0.4f, 1.0f);
+    Vector normal2(-0.4, 0.4, 1.0);
     normal2 = normal2.direction();
-    Vector normal3(0.4f, -0.4f, 1.0f);
+    Vector normal3(0.4, -0.4, 1.0);
     normal3 = normal3.direction();
     
     Vector normals[3] = {normal1, normal2, normal3};
+    for(int i =0 ; i < 3; ++i){
+        printf("Vertices: ");
+        v[i].print();
+        printf("Normals: ");
+        normals[i].print();
+    }
     Colour c(0.5, 0, 0);
-    Triangle tri(v, normals);
+    Colour k_L(0, 0, 0.8);
+    BSDF k(k_L);
+    Triangle tri(v, normals, k);
     tri.printVertices();
     std::vector<Triangle> triangles;
     triangles.push_back(tri);
     triangles[0].printVertices();
 
+    Point light_Local(0,1,0);
+    Colour light_Bright(1,1,1);
+    Light l(Point(0,1,0), Colour(10,10,10));
+    l.print();
+    printf("our fucking light^^ \n\n\n\n");
     std::vector<Light>lights;
-    Light l;
     lights.push_back(l);
+    lights[0].print();
+    printf("our fucking light in the vecvtor^^^^^\n\n\n\n");
     Scene ourScene(triangles, lights);
+    ourScene.light.print();
+    ourScene.printLights();
     printf("\n\n\nOur triangles\n");
     ourScene.printTriangles();
     printf("\n\n\n");

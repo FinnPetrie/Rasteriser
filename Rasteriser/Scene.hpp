@@ -22,11 +22,15 @@ public:
 
     std::vector<Triangle> triangles;
     std::vector<Light> lights;
+    Light light;
     
     Scene();
     Scene(std::vector<Triangle> t, std::vector<Light> l);
+    Scene(std::vector<Triangle> t, Light l);
     std::vector<Triangle> getTriangles() const;
     std::vector<Light> getLights() const;
     void printTriangles() const;
+    void printLights() const;
 };
+
 #endif /* Scene_hpp */

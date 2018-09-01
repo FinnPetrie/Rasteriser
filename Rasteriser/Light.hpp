@@ -24,4 +24,7 @@ public:
     
     Light();
     Light(Point l, Colour c);
+    const Colour& getEmittance() const;
+    const Point& getLocation() const;
+    void print() const;
 };

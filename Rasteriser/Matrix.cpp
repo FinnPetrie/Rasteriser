@@ -25,6 +25,7 @@ Matrix::Matrix(size_t r, size_t c) : rows(r), columns(c), mat(rows*columns, {}){
 //high coupling. Sort this out.
 Matrix::Matrix(size_t r, size_t c, double x, double y, double z): rows(r), columns(c), mat(rows*columns) {
     mat = {x, y, z};
+    
 }
 
 Matrix::Matrix(const Matrix &n): mat(n.mat), rows(n.rows), columns(n.columns){
@@ -122,6 +123,17 @@ Matrix operator*(const Matrix &n, double S){
     Matrix A(n);
     for(int i = 0; i < n.rows*n.columns;  ++i){
         A.mat[i] *= S;
+    }
+    return A;
+}
+
+Matrix operator+=(const Matrix &lhs, const Matrix &rhs){
+    assert(lhs.columns == rhs.columns && lhs.rows == rhs.rows);
+    Matrix A(rhs.rows);
+    for(int i = 0; i < lhs.rows; ++i){
+        for(int j = 0; j < lhs.columns; ++j){
+            A.mat[A.getRepresentation(i, j)] = lhs.mat[lhs.getRepresentation(i, j)] + rhs.mat[rhs.getRepresentation(i, j)];
+        }
     }
     return A;
 }

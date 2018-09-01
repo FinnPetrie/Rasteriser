@@ -13,6 +13,10 @@ Scene::Scene(std::vector<Triangle> t, std::vector<Light> l) : triangles(t), ligh
     
 }
 
+Scene::Scene(std::vector<Triangle> t, Light l): triangles(t), light(l){
+    
+}
+
 std::vector<Triangle>Scene::getTriangles() const{
     return triangles;
 }
@@ -26,4 +30,8 @@ void Scene::printTriangles() const{
     for(int i = 0; i < triangles.size(); ++i){
         triangles[i].printVertices();
     }
+}
+
+void Scene::printLights() const{
+    light.print();
 }

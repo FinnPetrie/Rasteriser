@@ -19,6 +19,16 @@ Triangle::Triangle(Vector v[3], Colour c){
     }
     
 }
+Triangle::Triangle(Vector v[3], Colour c, BSDF k) : bsdf(k){
+    for(int i = 0; i < 3; ++i){
+        vertices[i] = v[i];
+    }
+    Colour colour = c;
+    for(int i = 0; i < 3; ++i){
+        vertices[i].print();
+    }
+    
+}
 Triangle::Triangle(Vector a1, Vector a2, Vector a3){
     vertices[0] = a1;
     vertices[1] = a2;
@@ -29,8 +39,8 @@ Triangle::Triangle(Vector a1, Vector a2, Vector a3){
 }
 
 
-Triangle::Triangle(Vector v[3], Vector n[3]){
-    for(int i = 0; i < 2; ++i){
+Triangle::Triangle(Vector v[3], Vector n[3], BSDF b) : bsdf(b){
+    for(int i = 0; i < 3; ++i){
         vertices[i] = v[i];
         normals[i] = n[i];
     }
@@ -44,6 +54,7 @@ double Triangle::area(){
 void Triangle::printVertices() const{
     for(int i =0 ; i < 3; ++i){
         vertices[i].print();
+        normals[i].print();
     }
 }
 
@@ -78,4 +89,12 @@ Vector Triangle::normal(int i) const{
 Vector Triangle::vertex(int i) const{
     assert(i <= 2);
     return vertices[i];
+}
+
+const BSDF& Triangle::getBSDF() const{
+    return bsdf;
+}
+
+void Triangle::setBSDF(const Vector &n) const {
+    BSDF bsdf(n);
 }
