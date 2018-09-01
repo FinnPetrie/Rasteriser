@@ -13,17 +13,27 @@
 #include <assert.h>
 
 
+
 class Colour{
-private:
-    double red, green, blue, alpha;
 public:
+
+    double red, green, blue, alpha;
     Colour(double r, double g, double b);
     Colour(double r, double g, double b, double alpha);
     Colour();
     Colour(Vector v);
-
+    void print() const;
 };
-Colour operator*(Colour &lhs, Colour &rhs)
+Colour operator*(const Colour &lhs, const Colour &rhs);
+Colour operator+(const Colour &lhs, const Colour &rhs);
+Colour operator-(const Colour &lhs, const Colour &rhs);
+Colour operator-(const Colour &rhs);
+Colour operator*(double scalar, const Colour &rhs);
+Colour operator*(const Colour &rhs, double scalar);
+Colour operator/(const Colour &lhs, double scalar);
+Colour operator/=(const Colour &lhs, double);
+Colour operator+=(const Colour &lhs, const Colour &rhs);
+Colour operator+=(const Colour &lhs, double rhs);
 
 
 #endif /* Colour_hpp */

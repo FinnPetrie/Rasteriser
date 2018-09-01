@@ -36,6 +36,7 @@ public:
     Vector vertex(int i) const;
     const BSDF& getBSDF() const;
     void setBSDF(const Vector& n) const;
+    void printBSDF() const;
 };
 
 #endif /* Triangle_hpp */

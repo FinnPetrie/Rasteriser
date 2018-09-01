@@ -58,6 +58,10 @@ void Triangle::printVertices() const{
     }
 }
 
+
+void Triangle::printBSDF() const{
+    bsdf.print();
+}
 Vector Triangle::barycentric(const Vector& p){
     Triangle CAP(vertices[2], vertices[0], p);
     Triangle ABP(vertices[0], vertices[1], p);

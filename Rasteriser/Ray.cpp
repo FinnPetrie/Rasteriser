@@ -59,9 +59,12 @@ Direction Ray::getDirection() const{
 }
 
 void Ray::print() const{
+    printf("Our point: ");
     this->point.print();
-//    this->direction.print();
-    
+    printf("\n");
+    printf("Our direction: ");
+    this->direction.print();
+    printf("\n");
 }
 
 Vector Ray::directionise() const{

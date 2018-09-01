@@ -33,56 +33,87 @@ int main(int , const char * argv[]) {
 //    q.print();
     
 //    m.print();
+    
     Vector look(0,0, -1);
     Vector up(0,1,0);
     Vector position(0,0,0);
-//    p.print();
-//    p.print();
+    /**
+    
+    Vector vertices[3];
+    vertices[0] = Vector(0, 1, -2);
+    vertices[1] = Vector(-1.9, -1, -2);
+    vertices[2] = Vector(1.6, -0.5, -2);
+    Vector normals[3];
+    normals[0] = Vector(0, 0.6, 1).direction();
+    normals[1] = Vector(-0.4, -0.4, 1.0).direction();
+    normals[2] = Vector(0.4, -0.4, 1.0).direction();
+    BSDF green(Colour(0, 1, 0) * 0.8, Colour(1,1,1) * 0.2, 100);
+    
+    Triangle t(vertices, normals, green);
     
     
-    Vector t(0, 1, -2);
-    Vector s(-1.9, -1, -2);
-    Vector g(1.6, -0.5, -2);
-    Vector v[3] = {t, s, g};
     
-    Vector normal1(0.0, 0.6, 1.0);
-    normal1 = normal1.direction();
-    Vector normal2(-0.4, 0.4, 1.0);
-    normal2 = normal2.direction();
-    Vector normal3(0.4, -0.4, 1.0);
-    normal3 = normal3.direction();
+    Vector verts[3];
+    verts[0] = Vector(-1.9, -1, -2);
+    verts[1] = Vector(0, 1, -2);
+    verts[2] = Vector(1.6, -0.5, -2);
+    Vector norms[3];
+    norms[0] = Vector(-0.4, -0.4, 1.0).direction();
+    norms[1] = Vector(0, 0.6, 1).direction();
+    norms[2] = Vector(0.4, -0.4, 1.0).direction();
+   // BSDF green(Colour(0,1,0) * 0.8, Colour(1,1,1) * 0.2, 100);
+    Triangle triOne(vertices, normals, green);
     
-    Vector normals[3] = {normal1, normal2, normal3};
-    for(int i =0 ; i < 3; ++i){
-        printf("Vertices: ");
-        v[i].print();
-        printf("Normals: ");
-        normals[i].print();
-    }
-    Colour c(0.5, 0, 0);
-    Colour k_L(0, 0, 0.8);
-    BSDF k(k_L);
-    Triangle tri(v, normals, k);
-    tri.printVertices();
+    
+    
+    const float groundY = -1.0;
+    const Colour groundColour = Colour(1,1,1) * 0.8;
+    Vector verticesGround[3];
+    verticesGround[0] = Vector(-10, groundY, -10);
+    verticesGround[1] = Vector(-10, groundY, -0.01);
+    verticesGround[2] = Vector(10, groundY, -0.01);
+    Vector normalsGround[3];
+    normalsGround[0] = Vector(0,1,0);
+    normalsGround[1] = Vector(0,1,0);
+    normalsGround[2] = Vector(0,1,0);
+    BSDF grey(groundColour, groundColour, 0);
+    Triangle groundOne(verticesGround, normalsGround, grey);
+    
+    
+    
+    Vector verticesGroundTwo[3];
+    verticesGroundTwo[0] = Vector(-10, groundY, -10);
+    verticesGroundTwo[1] = Vector(10, groundY, -0.01);
+    verticesGroundTwo[2] = Vector(-10, groundY, -10);
+    Triangle groundWound(verticesGroundTwo, normalsGround, grey);
+    
+   // printf("\n\n\n");*/
     std::vector<Triangle> triangles;
+   /** triangles.push_back(t);
+    triangles.push_back(triOne);
+    triangles.push_back(groundOne);
+    triangles.push_back(groundWound);
     triangles.push_back(tri);
     triangles[0].printVertices();
+   */
+    //printf("\n\n\n");
+
 
     Point light_Local(0,1,0);
     Colour light_Bright(1,1,1);
-    Light l(Point(0,1,0), Colour(10,10,10));
-    l.print();
-    printf("our fucking light^^ \n\n\n\n");
+    Light l(Point(1,3,1), Colour(50,50,50));
+   // l.print();
+   // printf("our fucking light^^ \n\n\n\n");
     std::vector<Light>lights;
     lights.push_back(l);
-    lights[0].print();
-    printf("our fucking light in the vecvtor^^^^^\n\n\n\n");
+    //lights[0].print();
+    //printf("our fucking light in the vecvtor^^^^^\n\n\n\n");
     Scene ourScene(triangles, lights);
-    ourScene.light.print();
-    ourScene.printLights();
-    printf("\n\n\nOur triangles\n");
-    ourScene.printTriangles();
-    printf("\n\n\n");
+    //ourScene.light.print();
+   // ourScene.printLights();
+   // printf("\n\n\nOur triangles\n");
+    //ourScene.printTriangles();
+    //printf("\n\n\n");
     
     
     
@@ -97,9 +128,13 @@ int main(int , const char * argv[]) {
     
     
     Renderer r;
+    //r.makeTrianglePlusGroundScene(ourScene);
     Camera ourCamera(look, up, position);
     Image ourImage(640, 480);
-    r.rayTrace(ourImage, ourScene, ourCamera, 0, ourImage.width(), 0, ourImage.height());
+    Point p(0,2,0);
+    //p.print();
+    r.makeTrianglePlusGroundScene(ourScene);
+    r.rasterize(ourImage, ourScene, ourCamera);
 //        printf("%f this is our dot product\n", q);
     ourImage.save("ourImage.ppm", 2.2f);
     return 0;

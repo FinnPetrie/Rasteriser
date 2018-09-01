@@ -23,8 +23,10 @@ public:
     float intersect(const Ray& R, const Triangle& T, float weight[3]);
     bool sampleRayTriangle(const Scene& scene, int x, int y, const Ray& R, const Triangle& T, Colour& radiance, float& distance);
     void shade(const Scene& scene, const Triangle& T, const Point& P, const Vector& n, const Vector& w_o, Colour& L_o);
-    bool visible(const Point& p, const Vector& weight, const float f, const Scene& scene);
-
+    bool visible(const Vector& p, const Vector& weight, const float f, const Scene& scene);
+    void makeOneTriangleScene(Scene& s);
+    void makeTrianglePlusGroundScene(Scene& s);
+    void rasterize(Image& image, const Scene& scene, const Camera& camera);
 
 };
 #endif /* Renderer_hpp */

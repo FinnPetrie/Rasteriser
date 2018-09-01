@@ -21,6 +21,7 @@
 		8A560164211AFF7200D69700 /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560162211AFF6F00D69700 /* Direction.cpp */; };
 		8A560167211AFF9500D69700 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560165211AFF9500D69700 /* Point.cpp */; };
 		8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A84D8B42120FF7300DC938F /* Camera.cpp */; };
+		8AD5C1D3213ACCE800539E06 /* DepthBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		8A560166211AFF9500D69700 /* Point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Point.hpp; sourceTree = "<group>"; };
 		8A84D8B42120FF7300DC938F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		8A84D8B52120FF7300DC938F /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthBuffer.cpp; sourceTree = "<group>"; };
+		8AD5C1D2213ACCE800539E06 /* DepthBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DepthBuffer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,17 +101,19 @@
 			children = (
 				8A5601552119B23C00D69700 /* main.cpp */,
 				8A1328002130F9880060AC05 /* Renderer.cpp */,
+				8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */,
+				8AD5C1D2213ACCE800539E06 /* DepthBuffer.hpp */,
 				8A51B514213815D1006988C8 /* BSDF.cpp */,
 				8A51B515213815D1006988C8 /* BSDF.hpp */,
 				8A1328012130F9880060AC05 /* Renderer.hpp */,
 				8A1328062130FBD70060AC05 /* Scene.cpp */,
 				8A1328072130FBD70060AC05 /* Scene.hpp */,
 				8A84D8B42120FF7300DC938F /* Camera.cpp */,
+				8A84D8B52120FF7300DC938F /* Camera.hpp */,
 				8A1328032130FB0D0060AC05 /* Light.cpp */,
 				8A1328042130FB0D0060AC05 /* Light.hpp */,
 				8A1327F4212D708C0060AC05 /* Triangle.cpp */,
 				8A1327F5212D708C0060AC05 /* Triangle.hpp */,
-				8A84D8B52120FF7300DC938F /* Camera.hpp */,
 				8A1327F7212E629D0060AC05 /* Ray.cpp */,
 				8A1327F8212E629D0060AC05 /* Ray.hpp */,
 				8A1327FA212E62B40060AC05 /* Colour.cpp */,
@@ -153,7 +158,7 @@
 		8A56014A2119B23500D69700 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Finn Petrie";
 				TargetAttributes = {
 					8A5601512119B23700D69700 = {
@@ -193,6 +198,7 @@
 				8A51B516213815D1006988C8 /* BSDF.cpp in Sources */,
 				8A1327F6212D708C0060AC05 /* Triangle.cpp in Sources */,
 				8A1328052130FB0D0060AC05 /* Light.cpp in Sources */,
+				8AD5C1D3213ACCE800539E06 /* DepthBuffer.cpp in Sources */,
 				8A1327F9212E629D0060AC05 /* Ray.cpp in Sources */,
 				8A5601562119B23D00D69700 /* main.cpp in Sources */,
 				8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */,
@@ -214,15 +220,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -262,15 +276,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

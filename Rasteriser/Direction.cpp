@@ -19,3 +19,4 @@ Direction::Direction() : Vector(4, 0, 0, 0, 0){
 Direction::Direction(Vector v): Vector(v, 0){
     
 }
+

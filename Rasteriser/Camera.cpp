@@ -39,12 +39,30 @@ Camera::Camera(Vector look, Vector vUP, Vector p) : zNear(-0.1f), zFar(-100.0f),
     
     //    printf("Our view volume\n");
     //    viewVolume.print();
+
+    //perspective = matrix 4x4(diagonal entries = 1/(ftan(fieldofView/2), 1/ftan(thetav/2), 1/f, 1, matrix 4*4 with rows 0->2 = our bases,, matrix 4*4 with 4th column = -P;
+    
+//    printf("Our debug: 1st, AB, 2nd A, 3rd B, 4th C, 5th position\n%f:", AB);
+//    A.print();
+//    B.print();
+//    C.print();
+//    position.print();
+//    printf("aNegB %f\n", aNegB);
+//    for(int i =0 ; i < 3; ++i){
+//        printf("Our %dth bases: ", i);
+//        bases[i].print();
+//    }
+    
+ 
+//    printf("Our view volume\n");
+//    viewVolume.print();
     this->viewVolume = ViewVolume();
     this->basisComposition = BasisComposition();
     this->translation = Translation();
     this->perspective = Perspective();
     
     //    this->print();
+//    this->print();
     
 }
 
@@ -57,6 +75,10 @@ Matrix Camera::Perspective(){
     //    perspective.print();
     return *perspective;
     
+    
+//    perspective.print();
+    //return *perspective;
+
     
 }
 Matrix Camera::BasisComposition(){
@@ -101,6 +123,8 @@ Matrix Camera::Translation(){
     return *translation;
     //    printf("our translation matrix\n");
     //    translation.print();
+//    printf("our translation matrix\n");
+//    translation.print();
     
 }
 

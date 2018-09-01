@@ -58,6 +58,11 @@ double Vector::magnitude() const{
     
 }
 
+
+void Vector::normalised(){
+    double normed = this->magnitude();
+    *this/=normed;
+}
  Vector Vector::cross(const Vector& v)const{
     assert(mat.size() == v.mat.size());
     const Vector product(v.columns, (mat[1]*v.mat[2] - mat[2]*v.mat[1]), (mat[2]*v.mat[0] - mat[0]*v.mat[2]), (mat[0]*v.mat[1] - mat[1]*v.mat[0]));
@@ -176,3 +181,7 @@ Vector operator+=(const Vector& lhs, double rhs){
 //Vector Vector::operator*(Vector &n){
 //   return Matrix::operator*(n);
 //}
+
+
+//Vector operator=(const Vector &n){
+    

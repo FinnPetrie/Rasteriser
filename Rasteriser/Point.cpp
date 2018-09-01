@@ -12,6 +12,7 @@
 Point::Point(double x, double y, double z): Vector(4, x, y, z, 1){
 }
 Point::Point(): Vector(4, 0,0,0,1){
+
     
 }
 

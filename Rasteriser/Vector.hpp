@@ -33,6 +33,7 @@ class Vector: public Matrix{
     Vector toColumn(const Vector &from) const;
     //void operator +=(const Vector &rhs);
     virtual double operator()(int index);
+    void normalised();
 };
 
 

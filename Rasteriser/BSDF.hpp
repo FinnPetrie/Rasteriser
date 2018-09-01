@@ -13,18 +13,26 @@
 #include "Colour.hpp"
 
 class BSDF{
-private:
+public:
     Colour k_L;
+    Colour k_G;
+    float s;
+    //Vector n;
     
 public:
     BSDF(Colour k);
     BSDF();
+    
+    BSDF(Colour k, Colour l, float scatter);
     BSDF(double x, double y, double z);
     /** Returns f = L_o / (L_i * w_i.dot(n)) assuming
      incident and outgoing directions are both in the
      positive hemisphere above the normal */
-    Colour evaluateFiniteScatteringDensity(const Vector& w_i, const Vector& w_o) const;
+    Colour evaluateFiniteScatteringDensity(const Vector& w_i, const Vector& w_o, const Vector& n) const;
     Colour getk_L() const;
+    void print() const;
+    void setNormal(Vector &n) const;
+    
     void operator=(const BSDF& rhs);
 
 };

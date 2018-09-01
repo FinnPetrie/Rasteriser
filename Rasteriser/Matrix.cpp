@@ -10,7 +10,7 @@
 #include "Matrix.hpp"
 #include <assert.h>
 Matrix::Matrix(){
-    Matrix::Matrix(4);
+   Matrix(4);
 }
 Matrix::Matrix(size_t square): rows(square), columns(square), mat(rows*columns, {}){
 //    printf("squre initialiser");

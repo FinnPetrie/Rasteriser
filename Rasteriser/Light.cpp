@@ -14,7 +14,7 @@ Light::Light(){
 
     Point p(0,0,0);
     location = p;
-    location.print();
+    //location.print();
     Colour c(1,1,1);
     
     emittance = c;
