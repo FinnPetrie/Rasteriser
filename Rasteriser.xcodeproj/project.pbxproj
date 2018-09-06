@@ -20,6 +20,7 @@
 		8A5601612119B48E00D69700 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A5601602119B48E00D69700 /* Matrix.cpp */; };
 		8A560164211AFF7200D69700 /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560162211AFF6F00D69700 /* Direction.cpp */; };
 		8A560167211AFF9500D69700 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A560165211AFF9500D69700 /* Point.cpp */; };
+		8A7F1072213EAA1B009B2848 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F1070213EAA1B009B2848 /* Vector2.cpp */; };
 		8A84D8B62120FF7300DC938F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A84D8B42120FF7300DC938F /* Camera.cpp */; };
 		8AD5C1D3213ACCE800539E06 /* DepthBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		8A560163211AFF7000D69700 /* Direction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Direction.hpp; sourceTree = "<group>"; };
 		8A560165211AFF9500D69700 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		8A560166211AFF9500D69700 /* Point.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Point.hpp; sourceTree = "<group>"; };
+		8A7F1070213EAA1B009B2848 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		8A7F1071213EAA1B009B2848 /* Vector2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector2.hpp; sourceTree = "<group>"; };
 		8A84D8B42120FF7300DC938F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		8A84D8B52120FF7300DC938F /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthBuffer.cpp; sourceTree = "<group>"; };
@@ -100,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				8A5601552119B23C00D69700 /* main.cpp */,
-				8A1328002130F9880060AC05 /* Renderer.cpp */,
 				8AD5C1D1213ACCE800539E06 /* DepthBuffer.cpp */,
+				8A1328002130F9880060AC05 /* Renderer.cpp */,
 				8AD5C1D2213ACCE800539E06 /* DepthBuffer.hpp */,
 				8A51B514213815D1006988C8 /* BSDF.cpp */,
 				8A51B515213815D1006988C8 /* BSDF.hpp */,
@@ -124,6 +127,8 @@
 				8A56015F2119B34700D69700 /* Matrix.hpp */,
 				8A5601602119B48E00D69700 /* Matrix.cpp */,
 				8A56015D2119B31000D69700 /* Vector.cpp */,
+				8A7F1070213EAA1B009B2848 /* Vector2.cpp */,
+				8A7F1071213EAA1B009B2848 /* Vector2.hpp */,
 				8A560162211AFF6F00D69700 /* Direction.cpp */,
 				8A560163211AFF7000D69700 /* Direction.hpp */,
 				8A560165211AFF9500D69700 /* Point.cpp */,
@@ -190,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5601612119B48E00D69700 /* Matrix.cpp in Sources */,
+				8A7F1072213EAA1B009B2848 /* Vector2.cpp in Sources */,
 				8A1328082130FBD70060AC05 /* Scene.cpp in Sources */,
 				8A1327FC212E62B40060AC05 /* Colour.cpp in Sources */,
 				8A56015E2119B31000D69700 /* Vector.cpp in Sources */,

@@ -22,7 +22,7 @@ int DepthBuffer::height() const{
 
 void DepthBuffer::set(int x, int y, const double value){
     m_data[x+y * m_width] = value;
-    printf("value = %f", m_data[x+y * m_width]);
+   // printf("value = %f", m_data[x+y * m_width]);
 }
 
 const double DepthBuffer::get(int x, int y) const{

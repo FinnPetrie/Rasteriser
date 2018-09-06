@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "Vector::dot(const Vector&amp; v)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "Matrix::print()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "Matrix::print()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "Matrix::getElement(int i, int j)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "Matrix::getColumns()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "operator-(const Matrix&amp; lhs, const Matrix &amp;rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "Vector::normalised()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "operator-(const Vector &amp;lhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "operator-(const Vector &amp;lhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.hpp"
-            timestampString = "556781714.9346679"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37">
+            startingLineNumber = "38"
+            endingLineNumber = "38">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79">
+            startingLineNumber = "83"
+            endingLineNumber = "83">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -198,11 +198,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "operator+(const Vector &amp;lhs, const Vector &amp;rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "Matrix::getRows()"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "Matrix::Matrix(const Matrix &amp;n)"
             landmarkType = "7">
          </BreakpointContent>
@@ -374,7 +374,7 @@
                   moduleName = "Rasteriser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/FinnPetrie/Documents/3D-Projects/Rasteriser/Rasteriser/Triangle.cpp"
-                  timestampString = "557502473.070647"
+                  timestampString = "557755268.327571"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -389,7 +389,7 @@
                   moduleName = "Rasteriser"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/FinnPetrie/Documents/3D-Projects/Rasteriser/Rasteriser/Triangle.cpp"
-                  timestampString = "557502473.074865"
+                  timestampString = "557755268.333701"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557502415.0123889"
+            timestampString = "557755266.413466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "Renderer::rayTrace(Image &amp;image, const Scene &amp;scene, const Camera &amp;camera, int x0, int x1, int y0, int y1)"
             landmarkType = "7">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "operator+(const Vector &amp;lhs, const Vector &amp;rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557502415.0123889"
+            timestampString = "557755266.413466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "Renderer::rayTrace(Image &amp;image, const Scene &amp;scene, const Camera &amp;camera, int x0, int x1, int y0, int y1)"
             landmarkType = "7">
          </BreakpointContent>
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -564,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,11 +612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "operator-(const Vector &amp;lhs, const Vector &amp;rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -628,11 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "operator+=(const Matrix &amp;lhs, const Matrix &amp;rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -644,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -660,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "Vector::Vector(double x, double y, double z, size_t n, std::string s)"
             landmarkType = "7">
             <Locations>
@@ -724,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557331772.07322"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "Vector::Vector(double x, double y, double z, size_t n, std::string s)"
             landmarkType = "7">
          </BreakpointContent>
@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Matrix.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "operator+(const Matrix &amp;lhs, const Matrix&amp; rhs)"
             landmarkType = "9">
          </BreakpointContent>
@@ -756,11 +756,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Vector.cpp"
-            timestampString = "557475143.938336"
+            timestampString = "557534024.966809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "Vector::normalised()"
             landmarkType = "7">
          </BreakpointContent>
@@ -788,11 +788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -804,11 +804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "Renderer::sampleRayTriangle(const Scene&amp; scene, int x, int y, const Ray&amp; R, const Triangle&amp; T, Colour&amp; radiance, float&amp; distance)"
             landmarkType = "7">
          </BreakpointContent>
@@ -868,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "Renderer::shade(const Scene&amp; scene, const Triangle&amp; T, const Point&amp; P, const Vector&amp; n, const Vector&amp; w_o, Colour&amp; L_o)"
             landmarkType = "7">
          </BreakpointContent>
@@ -884,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "Renderer::shade(const Scene&amp; scene, const Triangle&amp; T, const Point&amp; P, const Vector&amp; n, const Vector&amp; w_o, Colour&amp; L_o)"
             landmarkType = "7">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rasteriser/Renderer.cpp"
-            timestampString = "557503198.0542721"
+            timestampString = "557756183.1274149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "Renderer::shade(const Scene&amp; scene, const Triangle&amp; T, const Point&amp; P, const Vector&amp; n, const Vector&amp; w_o, Colour&amp; L_o)"
             landmarkType = "7">
          </BreakpointContent>
@@ -971,6 +971,70 @@
                   offsetFromSymbolStart = "27">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/Renderer.cpp"
+            timestampString = "557756183.1274149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "Renderer::computeBoundingBox(const Triangle&amp; T, const Camera&amp; camera, const Image&amp; image, Vector V[3], int&amp; x0, int&amp; y0, int&amp; x1, int&amp; y1)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/Renderer.cpp"
+            timestampString = "557756183.1274149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "Renderer::computeBoundingBox(const Triangle&amp; T, const Camera&amp; camera, const Image&amp; image, Vector V[3], int&amp; x0, int&amp; y0, int&amp; x1, int&amp; y1)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/Renderer.cpp"
+            timestampString = "557753347.137971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "Renderer::rasterize(Image&amp; image, const Scene&amp; scene, const Camera&amp; camera)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rasteriser/Renderer.cpp"
+            timestampString = "557755266.413466"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "Renderer::rasterize(Image&amp; image, const Scene&amp; scene, const Camera&amp; camera)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

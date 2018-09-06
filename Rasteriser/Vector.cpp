@@ -19,6 +19,9 @@ Vector::Vector(size_t n, double x, double y, double z, double w) : Matrix(1, n, 
 
 }
 
+Vector::Vector(double x, double y) : Matrix(1, 2, x, y){
+    
+}
 Vector::Vector(double x, double y, double z) : Matrix(1, 3, x, y, z){
 
 }
@@ -26,7 +29,7 @@ Vector::Vector() : Matrix(1,3, 0,0,0){
     
 }
 
-Vector::Vector(size_t n) : Matrix(1, 3){
+Vector::Vector(size_t n) : Matrix(1, n){
     
 }
 
@@ -145,6 +148,20 @@ Vector operator-(const Vector &lhs, const Vector &rhs){
         
     }
     return result;
+}
+
+bool Vector::max(const Vector& v){
+    if((v.magnitude() > this->magnitude())) {
+        return true;
+    }
+    return false;
+}
+
+bool Vector::min(const Vector& v){
+    if((v.magnitude() < this->magnitude())){
+        return true;
+    }
+    return false;
 }
 
 /**void Vector::operator+=(const Vector &rhs){

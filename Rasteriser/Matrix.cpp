@@ -19,6 +19,10 @@ Matrix::Matrix(size_t square): rows(square), columns(square), mat(rows*columns, 
 Matrix::Matrix(size_t r, size_t c) : rows(r), columns(c), mat(rows*columns, {}){
 }
 
+Matrix::Matrix(size_t r, size_t c, double x, double y) : rows(r), columns(c), mat(rows*columns){
+    mat = {x, y};
+}
+
 
 
 //incorrect, quick hack - this sorta presumes the functionality of a vector in the matrix class-

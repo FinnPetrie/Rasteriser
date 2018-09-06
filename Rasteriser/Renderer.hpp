@@ -14,7 +14,7 @@
 #include "Image.hpp"
 #include "Camera.hpp"
 #include "Ray.hpp"
-
+#include "Vector2.hpp"
 class Renderer{
 public:
     Renderer();
@@ -27,6 +27,10 @@ public:
     void makeOneTriangleScene(Scene& s);
     void makeTrianglePlusGroundScene(Scene& s);
     void rasterize(Image& image, const Scene& scene, const Camera& camera);
+    Vector perspectiveProjection(const Vector& P, int width, int height, const Camera& camera);
+    void computeBoundingBox(const Triangle& T, const Camera& camera, const Image& image, Vector V[3], int& x0, int& y0, int& x1, int& y1);
+    float lineDistance2D(const Vector2& A, const Vector2& B, const Vector2& Q);
+    float bary2D(const Vector2& A, const Vector2& B, const Vector2& C, const Vector2& Q);
 
 };
 #endif /* Renderer_hpp */

@@ -9,8 +9,8 @@
 #define Colour_hpp
 
 #include <stdio.h>
-#include "Vector.hpp"
 #include <assert.h>
+#include "Vector.hpp"
 
 
 

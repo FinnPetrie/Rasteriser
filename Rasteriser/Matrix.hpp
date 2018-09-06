@@ -20,6 +20,7 @@ class Matrix{
     Matrix();
     Matrix(size_t s);
     Matrix(size_t r, size_t c);
+    Matrix(size_t r, size_t c, double x, double y);
     Matrix(size_t r, size_t c, double x, double y, double z);
     Matrix(size_t r, size_t c, double x, double y, double z, double w);
     Matrix(const Matrix& n);

@@ -133,7 +133,9 @@ int main(int , const char * argv[]) {
     Image ourImage(640, 480);
     Point p(0,2,0);
     //p.print();
+   // r.makeOneTriangleScene(ourScene);
     r.makeTrianglePlusGroundScene(ourScene);
+   // r.rayTrace(ourImage, ourScene, ourCamera, 0, ourImage.width(), 0,  ourImage.height());
     r.rasterize(ourImage, ourScene, ourCamera);
 //        printf("%f this is our dot product\n", q);
     ourImage.save("ourImage.ppm", 2.2f);

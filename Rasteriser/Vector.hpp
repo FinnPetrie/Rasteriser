@@ -21,9 +21,12 @@ class Vector: public Matrix{
     Vector(double x, double y, double z);
     Vector(size_t n);
     Vector();
+    Vector(double x, double y);
     Vector(double x, double y, double z, size_t n, std::string s);
     Vector(Vector v, double w);
     Vector(Vector const &v);
+    bool max(const Vector&v);
+    bool min(const Vector&v);
     double dot(const Vector& r) const;
     Vector cross(const Vector& r)const;
     void print() const override;

@@ -10,6 +10,7 @@
 #include <cmath>
 #include <algorithm>
 #include "DepthBuffer.hpp"
+#include "Vector2.hpp"
 
 Renderer::Renderer(){
     
@@ -46,28 +47,169 @@ void Renderer::rasterize(Image& image, const Scene& scene, const Camera& camera)
     const int w = image.width(), h = image.height();
     DepthBuffer depthBuffer(w, h, INFINITY);
     // For each triangle
+ 
     for (unsigned int t = 0; t < scene.triangles.size(); ++t) {
         const Triangle& T = scene.triangles[t];
-        // Very conservative bounds: the whole screen
-        const int x0 = 0;
-        const int x1 = w;
-        const int y0 = 0;
-        const int y1 = h;
+        
+        /** int x0 = 0;
+         int x1 = w;
+         int y0 = 0;
+         int y1 = h;
+        */
+        
+        Vector2 V[3];
+        int x0, y0, x1, y1;
+        computeBoundingBox(T, camera, image, V, x0, y0, x1, y1);
+        
+         // Vertex attributes, divided by -z
+         float vertexW[3];
+        Vector vertexNw[3];
+         Vector vertexPw[3];        for(int v = 0; v <3; ++v){
+            const float w = -1.0f / T.vertex(v).mat[2];
+            vertexW[v] = w;
+            vertexPw[v] = T.vertex(v) * w;
+            vertexNw[v] = T.normal(v) * w;
+        }
+    
+      
+        
+        
         // For each pixel
         for (int y = y0; y < y1; ++y) {
             for (int x = x0; x < x1; ++x) {
-                const Ray& R = computeEyeRay(x, y, w, h, camera);
-                Colour L_o;
-                float distance = depthBuffer.get(x, y);
-                if (sampleRayTriangle(scene, x, y, R, T, L_o, distance)) {
-                    image.set(x, y, L_o);
-                    depthBuffer.set(x, y, distance);
+                
+                
+                // The pixel center
+                const Vector2 Q(x + 0.5f, y + 0.5f);
+                // 2D Barycentric weights
+                const float weight2D[3] =
+                {bary2D(V[0], V[1], V[2], Q),
+                    bary2D(V[1], V[2], V[0], Q),
+                    bary2D(V[2], V[0], V[1], Q)};
+                
+                if ((weight2D[0]>0) && (weight2D[1]>0) && (weight2D[2]>0)) {
+                    // Interpolate depth
+                    float w = 0.0f;
+                    for (int v = 0; v < 3; ++v) {
+                       // printf("Our weights i: %f\n", weight2D[v]);
+                        w += weight2D[v] * vertexW[v];
+                    }
+                    // Interpolate projective attributes, e.g., P’, n’
+                    Vector Pw;
+                    Vector nw;
+                    for (int v = 0; v < 3; ++v) {
+                        Pw = Pw + (weight2D[v] * vertexPw[v]);
+                        nw = nw + (weight2D[v] * vertexNw[v]);
+                    }
+                    //Pw.print();
+                    //nw.print();
+                    // Recover interpolated 3D attributes; e.g., P’ -> P, n’ -> n
+                    const Vector& P = Pw / w;
+                    const Vector& n = nw / w;
+                   // P.print();
+                    //n.print();
+                    const float depth = -P.mat[2];
+                    // We could also use depth = z-axis distance: depth = -P.z
+                    // Depth test
+                    if (depth < depthBuffer.get(x, y)) {
+                        // Shade
+                        Colour  L_o;
+                        const Vector& w_o = -P.direction();
+                        // Make the surface normal have unit length
+                        const Vector& unitN = n.direction();
+                        
+                        shade(scene, T, P, unitN, w_o, L_o);
+                        depthBuffer.set(x, y, depth);
+                        image.set(x, y, L_o);
+                    }
                 }
             }
         }
     }
 }
 
+
+Vector Renderer::perspectiveProjection(const Vector& P, int width, int height,
+                           const Camera& camera) {
+    // Project onto z = -1
+    Vector Q((-P.mat[0] / P.mat[2]), (-P.mat[1] / P.mat[2]));
+    //Q.print();
+    printf("\n\n");
+    const double aspect = double(height) / width;
+    // Compute the side of a square at z = -1 based on our
+    // horizontal left-edge-to-right-edge field of view
+    const double s = -2.0f * tan(camera.getFoVx() * 0.5f);
+    Q.mat[0] = width * (-Q.mat[0] / s + 0.5f);
+    Q.mat[1] = height * (Q.mat[1] / (s * aspect) + 0.5f);
+    //Q.print();
+    return Q;
+}
+
+void Renderer::computeBoundingBox(const Triangle& T, const Camera& camera, const Image& image, Vector V[3], int& x0, int& y0, int& x1, int& y1){
+    
+    Vector2 high(image.width(), image.height());
+    Vector2 low(0, 0);
+    
+    //printf("Magnitudes: low - %f, high - %f", low.magnitude(), high.magnitude());
+    
+    for(unsigned int v = 0; v < 3; ++v){
+        const Vector& X = perspectiveProjection(T.vertices[v], image.width(), image.height(), camera);
+        //printf("\n\nmag X: %f \n\n", X.magnitude());
+        V[v] = X;
+        if((X.mat[0] > 0 && X.mat[0] < image.width()) && (X.mat[1] > 0 && X.mat[1] < image.height() )){
+            if(X.mat[0] < low.mat[0]){
+                low.mat[0] = X.mat[0];
+            } if(X.mat[1] < low.mat[1]) {
+                low.mat[1] = X.mat[1];
+            }
+            if(X.mat[0] > high.mat[0]){
+                high.mat[0] = X.mat[0];
+            }if(X.mat[1] > high.mat[1]){
+                high.mat[1] = X.mat[1];
+            }
+        }
+        
+    }
+    /*if(high.max(X)) {
+     //if the projection is in frame
+     if((w >= X.mat[0]) && (h >= X.mat[1])){
+     high = X;
+     T.vertices[v].print();
+     printf("Our height");
+     high.print();
+     }
+     }if(low.min(X)) {
+     //if the projection is in frame
+     if((w >= X.mat[0]) && (h >= X.mat[1])){
+     
+     printf("Our low");
+     T.vertices[v].print();
+     
+     low = X;
+     low.print();
+     }
+     */
+    
+    
+    x1 = (int)ceil(high.mat[0]);
+    y1 = (int)ceil(high.mat[1]);
+    x0 = (int)floor(low.mat[0]);
+    y0 = (int)floor(low.mat[1]);
+    
+    
+    
+    
+    
+}
+float Renderer::lineDistance2D(const Vector2& A, const Vector2& B, const Vector2& Q){
+    const Vector2 n(A.mat[1]- B.mat[1], B.mat[0] - A.mat[0]);
+    const float d = A.mat[0] * B.mat[1] - B.mat[0] * A.mat[1];
+    return (n.dot(Q) + d) / n.magnitude();
+}
+
+float Renderer::bary2D(const Vector2& A, const Vector2& B, const Vector2& C, const Vector2& Q){
+    return lineDistance2D(B, C, Q)/lineDistance2D(B, C, A);
+}
 Ray Renderer::computeEyeRay(float x, float y, int width, int height, const Camera& camera) {
     
     const float aspect = float(height)/width;
@@ -115,7 +257,7 @@ float Renderer::intersect(const Ray& R, const Triangle& T, float weight[3]) {
     } else {
         
         //printf("Intersection");
-        printf("a hit!\n");
+        //printf("a hit!\n");
         return dist;
     }
 }
@@ -199,7 +341,7 @@ void Renderer::makeOneTriangleScene(Scene& s){
     normals[0] = Vector(0, 0.6, 1).direction();
     normals[1] = Vector(-0.4, -0.4, 1.0).direction();
     normals[2] = Vector(0.4, -0.4, 1.0).direction();
-    BSDF green(Colour(0, 0.8, 0), Colour(0.2, 0.2, 0.2), 100);
+    BSDF green(Colour(0.8, 0, 0), Colour(0.2, 0.2, 0.2), 100);
     
     Triangle t(vertices, normals, green);
     
@@ -217,7 +359,7 @@ void Renderer::makeTrianglePlusGroundScene(Scene& s){
     normals[0] = Vector(-0.4, -0.4, 1.0).direction();
     normals[1] = Vector(0, 0.6, 1).direction();
     normals[2] = Vector(0.4, -0.4, 1.0).direction();
-    BSDF green(Colour(0,0.8,0), Colour(0.2, 0.2, 0.2), 100);
+    BSDF green(Colour(0.8,0,0), Colour(0.2, 0.2, 0.2), 100);
     Triangle triOne(vertices, normals, green);
     
     s.triangles.push_back(triOne);
